@@ -1,0 +1,34 @@
+{
+  "Version": "1.0.0",
+  "Author": "caios",
+  "Name": "Steam Price Tracker",
+  "Description": "Track Steam app prices on your Ulanzi Deck",
+  "Icon": "assets/icons/icon.svg",
+  "Category": "Steam Price Tracker",
+  "CategoryIcon": "assets/icons/icon.svg",
+  "CodePath": "plugin/main.js",
+  "Type": "JavaScript",
+  "PrivateAPI": true,
+  "SupportedInMultiActions": false,
+  "UUID": "com.caios.ulanzideck.steampricetracker",
+  "Actions": [
+    {
+      "Name": "Price Tracker",
+      "Icon": "assets/icons/logo.png",
+      "PropertyInspectorPath": "property-inspector/tracker/inspector.html",
+      "state": 0,
+      "States": [
+        { "Image": "assets/icons/key.svg" }
+      ],
+      "Tooltip": "Displays the current Steam price",
+      "UUID": "com.caios.ulanzideck.steampricetracker.tracker",
+      "SupportedInMultiActions": false
+    }
+  ],
+  "OS": [
+    { "Platform": "windows", "MinimumVersion": "10" }
+  ],
+  "Software": {
+    "MinimumVersion": "6.1"
+  }
+}

@@ -1,0 +1,59 @@
+{
+    "Name": "Meeting Controls for Stream Deck",
+    "Description": "Control video calls directly from your Stream Deck with quick access to essential meeting controls",
+    "Category": "Meeting Controls for Stream Deck",
+    "com.kolaborate.meeting-controls.microphone": {
+        "Name": "Microphone",
+        "Tooltip": "Toggle microphone mute/unmute in your meeting",
+        "States": [
+            {
+                "Name": "Disabled"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.camera": {
+        "Name": "Camera",
+        "Tooltip": "Toggle camera on/off in your meeting",
+        "States": [
+            {
+                "Name": "Disabled"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.hand": {
+        "Name": "Hand",
+        "Tooltip": "Raise/lower hand in your meeting",
+        "States": [
+            {
+                "Name": "Hand Up"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.leave": {
+        "Name": "Leave",
+        "Tooltip": "Leave the current meeting",
+        "States": [
+            {
+                "Name": "Leave\nMeeting"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.reaction": {
+        "Name": "Reaction",
+        "Tooltip": "Displays a reaction selected.",
+        "States": [
+            {
+                "Name": ""
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.presentnow": {
+        "Name": "Present Now",
+        "Tooltip": "Start or stop screen sharing in your meeting",
+        "States": [
+            {
+                "Name": "Start\nPresenting"
+            }
+        ]
+    }
+}

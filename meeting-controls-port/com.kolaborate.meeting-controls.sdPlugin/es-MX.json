@@ -1,0 +1,59 @@
+{
+    "Name": "Controles de Reunión para Stream Deck",
+    "Description": "Controla las videollamadas directamente desde tu Stream Deck con acceso rápido a los controles esenciales de reunión",
+    "Category": "Controles de Reunión para Stream Deck",
+    "com.kolaborate.meeting-controls.microphone": {
+        "Name": "Micrófono",
+        "Tooltip": "Activar/desactivar silencio del micrófono en la reunión",
+        "States": [
+            {
+                "Name": "Deshabilitado"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.camera": {
+        "Name": "Cámara",
+        "Tooltip": "Activar/desactivar cámara en la reunión",
+        "States": [
+            {
+                "Name": "Deshabilitado"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.hand": {
+        "Name": "Mano",
+        "Tooltip": "Levantar/bajar mano en la reunión",
+        "States": [
+            {
+                "Name": "Mano Arriba"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.leave": {
+        "Name": "Salir",
+        "Tooltip": "Salir de la reunión actual",
+        "States": [
+            {
+                "Name": "Salir de\nReunión"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.reaction": {
+        "Name": "Reacción",
+        "Tooltip": "Muestra una reacción seleccionada.",
+        "States": [
+            {
+                "Name": ""
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.presentnow": {
+        "Name": "Presentar Ahora",
+        "Tooltip": "Iniciar o detener compartir pantalla en la reunión",
+        "States": [
+            {
+                "Name": "Iniciar\nPresentación"
+            }
+        ]
+    }
+}

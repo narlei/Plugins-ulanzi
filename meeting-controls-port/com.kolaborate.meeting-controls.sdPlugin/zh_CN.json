@@ -1,0 +1,59 @@
+{
+    "Name": "会议控制 for Stream Deck",
+    "Description": "直接从您的Stream Deck控制视频通话，快速访问重要会议控制功能",
+    "Category": "会议控制 for Stream Deck",
+    "com.kolaborate.meeting-controls.microphone": {
+        "Name": "麦克风",
+        "Tooltip": "在会议中切换麦克风静音/取消静音",
+        "States": [
+            {
+                "Name": "已禁用"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.camera": {
+        "Name": "摄像头",
+        "Tooltip": "在会议中切换摄像头开/关",
+        "States": [
+            {
+                "Name": "已禁用"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.hand": {
+        "Name": "举手",
+        "Tooltip": "在会议中举手/放下手",
+        "States": [
+            {
+                "Name": "举手"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.leave": {
+        "Name": "离开",
+        "Tooltip": "离开当前会议",
+        "States": [
+            {
+                "Name": "离开会议"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.reaction": {
+        "Name": "反应",
+        "Tooltip": "显示选定的反应。",
+        "States": [
+            {
+                "Name": ""
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.presentnow": {
+        "Name": "立即演示",
+        "Tooltip": "在会议中开始或停止屏幕共享",
+        "States": [
+            {
+                "Name": "开始\n演示"
+            }
+        ]
+    }
+}

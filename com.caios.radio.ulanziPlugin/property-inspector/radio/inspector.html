@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Radio Inspector</title>
+  <link rel="stylesheet" href="../../libs/css/udpi.css">
+</head>
+<body>
+  <div class="udpi-wrapper hidden">
+    <form id="property-inspector">
+      <div class="udpi-item">
+        <label class="udpi-item-label">Country Code</label>
+        <input class="udpi-item-value" id="country" name="country" type="text" maxlength="2" placeholder="BR">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Station Search</label>
+        <input class="udpi-item-value" id="searchName" type="text" placeholder="Ex: Jovem Pan">
+      </div>
+      <div class="udpi-item">
+        <button class="udpi-item-value" type="button" id="searchBtn">Search Radios</button>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Stations</label>
+        <select class="udpi-item-value" id="stationSelect"></select>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Station Name</label>
+        <input class="udpi-item-value" id="stationName" name="stationName" type="text" placeholder="Radio name">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Stream URL</label>
+        <input class="udpi-item-value" id="streamUrl" name="streamUrl" type="text" placeholder="https://...">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Volume (0-100)</label>
+        <input class="udpi-item-value" id="volume" name="volume" type="number" min="0" max="100" step="1" value="80">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Show Name On Key</label>
+        <input class="udpi-item-value" id="showStationOnKey" name="showStationOnKey" type="checkbox" checked>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Status</label>
+        <input class="udpi-item-value" id="statusLine" type="text" readonly value="Ready">
+      </div>
+    </form>
+  </div>
+
+  <script src="../../libs/js/constants.js"></script>
+  <script src="../../libs/js/eventEmitter.js"></script>
+  <script src="../../libs/js/timers.js"></script>
+  <script src="../../libs/js/utils.js"></script>
+  <script src="../../libs/js/ulanzideckApi.js"></script>
+  <script src="./inspector.js"></script>
+</body>
+</html>

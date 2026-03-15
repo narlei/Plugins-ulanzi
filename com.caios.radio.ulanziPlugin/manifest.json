@@ -1,0 +1,39 @@
+﻿{
+  "Version": "1.0.0",
+  "Author": "caios",
+  "Name": "Radio Online",
+  "Description": "Play/stop online radio stations",
+  "Icon": "assets/icons/icon.svg",
+  "Category": "Radio",
+  "CategoryIcon": "assets/icons/icon.svg",
+  "CodePath": "plugin/app.html",
+  "Type": "JavaScript",
+  "PrivateAPI": true,
+  "SupportedInMultiActions": false,
+  "UUID": "com.caios.ulanzideck.radio",
+  "Actions": [
+    {
+      "Name": "Radio Play/Stop",
+      "Icon": "assets/icons/icon.svg",
+      "PropertyInspectorPath": "property-inspector/radio/inspector.html",
+      "state": 0,
+      "States": [
+        {
+          "Image": "assets/icons/icon.svg"
+        }
+      ],
+      "Tooltip": "Toggle selected online radio",
+      "UUID": "com.caios.ulanzideck.radio.toggle",
+      "SupportedInMultiActions": false
+    }
+  ],
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.1"
+  }
+}

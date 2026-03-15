@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Audio Meter</title>
+  <link rel="stylesheet" href="../../libs/css/udpi.css">
+</head>
+<body>
+  <div class="udpi-wrapper hidden">
+    <form id="property-inspector">
+      <div class="udpi-item">
+        <label class="udpi-item-label">Mode</label>
+        <select class="udpi-item-value" id="mode" name="mode">
+          <option value="playback">Playback</option>
+          <option value="record">Recording</option>
+        </select>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Audio Device</label>
+        <select class="udpi-item-value" id="audioDevice" name="audioDevice"></select>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Max Threshold</label>
+        <input class="udpi-item-value" id="maxThreshold" name="maxThreshold" type="number" min="1" max="100" value="100">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Low Color</label>
+        <input class="udpi-item-value" id="lowColor" name="lowColor" type="color" value="#00ff00">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Mid Color</label>
+        <input class="udpi-item-value" id="midColor" name="midColor" type="color" value="#ffff00">
+        <input class="udpi-item-value" id="midLevel" name="midLevel" type="number" min="0" max="100" value="75">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Peak Color</label>
+        <input class="udpi-item-value" id="peakColor" name="peakColor" type="color" value="#ff0000">
+        <input class="udpi-item-value" id="peakLevel" name="peakLevel" type="number" min="0" max="100" value="85">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Background</label>
+        <input class="udpi-item-value" id="backgroundColor" name="backgroundColor" type="color" value="#000000">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Visual Style</label>
+        <select class="udpi-item-value" id="visualStyle" name="visualStyle">
+          <option value="0">3-Color Gradient</option>
+          <option value="1">Solid Color</option>
+          <option value="2">Background Gradient</option>
+          <option value="3">Background Gradient Flipped</option>
+        </select>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Response Profile</label>
+        <select class="udpi-item-value" id="responseProfile" name="responseProfile">
+          <option value="smooth">Smooth</option>
+          <option value="fast">Fast</option>
+          <option value="ultra">Ultra</option>
+        </select>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Level Title</label>
+        <input id="showLevelAsText" name="showLevelAsText" type="checkbox">
+      </div>
+      <div class="udpi-item">
+        <button class="udpi-item-value" type="button" id="refreshBtn">Reload Devices</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="../../libs/js/constants.js"></script>
+  <script src="../../libs/js/eventEmitter.js"></script>
+  <script src="../../libs/js/timers.js"></script>
+  <script src="../../libs/js/utils.js"></script>
+  <script src="../../libs/js/ulanzideckApi.js"></script>
+  <script src="./inspector.js"></script>
+</body>
+</html>

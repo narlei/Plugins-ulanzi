@@ -1,0 +1,390 @@
+<!doctype html>
+<html>
+	<head lang="en">
+		<title><sdpi-i18n key="reaction_settings_title"></sdpi-i18n></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://sdpi-components.dev/releases/v3/sdpi-components.js"></script>
+		<script>
+			SDPIComponents.i18n.locales = {
+				en: {
+					reaction_settings_title: "Reaction Settings",
+					how_to_use: "How to Use",
+					instruction_select: "Press the Stream Deck button to send the selected emoji reaction in Google Meet.",
+					instruction_icon: "The button will show the emoji you have selected.",
+					instruction_tab: "Make sure you have an active Google Meet tab open.",
+					emoji_reactions: "Emoji Reactions",
+					troubleshooting: "Troubleshooting",
+					troubleshooting_info: "If the reaction control is not working, ensure that:",
+					troubleshooting_point1: "Google Meet is open in an active browser tab",
+					troubleshooting_point_extension: "The Chrome extension is installed and has the necessary permissions.",
+				},
+				enUS: {
+					reaction_settings_title: "Reaction Settings",
+					how_to_use: "How to Use",
+					instruction_select: "Press the Stream Deck button to send the selected emoji reaction in Google Meet.",
+					instruction_icon: "The button will show the emoji you have selected.",
+					instruction_tab: "Make sure you have an active Google Meet tab open.",
+					emoji_reactions: "Emoji Reactions",
+					troubleshooting: "Troubleshooting",
+					troubleshooting_info: "If the reaction control is not working, ensure that:",
+					troubleshooting_point1: "Google Meet is open in an active browser tab",
+					troubleshooting_point_extension: "The Chrome extension is installed and has the necessary permissions.",
+				},
+				enUK: {
+					reaction_settings_title: "Reaction Settings",
+					how_to_use: "How to Use",
+					instruction_select: "Press the Stream Deck button to send the selected emoji reaction in Google Meet.",
+					instruction_icon: "The button will show the emoji you have selected.",
+					instruction_tab: "Make sure you have an active Google Meet tab open.",
+					emoji_reactions: "Emoji Reactions",
+					troubleshooting: "Troubleshooting",
+					troubleshooting_info: "If the reaction control is not working, ensure that:",
+					troubleshooting_point1: "Google Meet is open in an active browser tab",
+					troubleshooting_point_extension: "The Chrome extension is installed and has the necessary permissions.",
+				},
+				enAU: {
+					reaction_settings_title: "Reaction Settings",
+					how_to_use: "How to Use",
+					instruction_select: "Press the Stream Deck button to send the selected emoji reaction in Google Meet.",
+					instruction_icon: "The button will show the emoji you have selected.",
+					instruction_tab: "Make sure you have an active Google Meet tab open.",
+					emoji_reactions: "Emoji Reactions",
+					troubleshooting: "Troubleshooting",
+					troubleshooting_info: "If the reaction control is not working, ensure that:",
+					troubleshooting_point1: "Google Meet is open in an active browser tab",
+					troubleshooting_point_extension: "The Chrome extension is installed and has the necessary permissions.",
+				},
+				enCA: {
+					reaction_settings_title: "Reaction Settings",
+					how_to_use: "How to Use",
+					instruction_select: "Press the Stream Deck button to send the selected emoji reaction in Google Meet.",
+					instruction_icon: "The button will show the emoji you have selected.",
+					instruction_tab: "Make sure you have an active Google Meet tab open.",
+					emoji_reactions: "Emoji Reactions",
+					troubleshooting: "Troubleshooting",
+					troubleshooting_info: "If the reaction control is not working, ensure that:",
+					troubleshooting_point1: "Google Meet is open in an active browser tab",
+					troubleshooting_point_extension: "The Chrome extension is installed and has the necessary permissions.",
+				},
+				es: {
+					reaction_settings_title: "Configuración de Reacciones",
+					how_to_use: "Cómo Usar",
+					instruction_select:
+						"Presiona el botón del Stream Deck para enviar la reacción de emoji seleccionada en Google Meet.",
+					instruction_icon: "El botón mostrará el emoji que hayas seleccionado.",
+					instruction_tab: "Asegúrate de tener una pestaña activa de Google Meet abierta.",
+					emoji_reactions: "Reacciones de Emoji",
+					troubleshooting: "Solución de Problemas",
+					troubleshooting_info: "Si el control de reacciones no funciona, asegúrate de que:",
+					troubleshooting_point1: "Google Meet esté abierto en una pestaña activa del navegador",
+					troubleshooting_point_extension: "La extensión de Chrome está instalada y tiene los permisos necesarios.",
+				},
+				esES: {
+					reaction_settings_title: "Configuración de Reacciones",
+					how_to_use: "Cómo Usar",
+					instruction_select:
+						"Presiona el botón del Stream Deck para enviar la reacción de emoji seleccionada en Google Meet.",
+					instruction_icon: "El botón mostrará el emoji que hayas seleccionado.",
+					instruction_tab: "Asegúrate de tener una pestaña activa de Google Meet abierta.",
+					emoji_reactions: "Reacciones de Emoji",
+					troubleshooting: "Solución de Problemas",
+					troubleshooting_info: "Si el control de reacciones no funciona, asegúrate de que:",
+					troubleshooting_point1: "Google Meet esté abierto en una pestaña activa del navegador",
+					troubleshooting_point_extension: "La extensión de Chrome está instalada y tiene los permisos necesarios.",
+				},
+				esMX: {
+					reaction_settings_title: "Configuración de Reacciones",
+					how_to_use: "Cómo Usar",
+					instruction_select:
+						"Presiona el botón del Stream Deck para enviar la reacción de emoji seleccionada en Google Meet.",
+					instruction_icon: "El botón mostrará el emoji que hayas seleccionado.",
+					instruction_tab: "Asegúrate de tener una pestaña activa de Google Meet abierta.",
+					emoji_reactions: "Reacciones de Emoji",
+					troubleshooting: "Solución de Problemas",
+					troubleshooting_info: "Si el control de reacciones no funciona, asegúrate de que:",
+					troubleshooting_point1: "Google Meet esté abierto en una pestaña activa del navegador",
+					troubleshooting_point_extension: "La extensión de Chrome está instalada y tiene los permisos necesarios.",
+				},
+				esAR: {
+					reaction_settings_title: "Configuración de Reacciones",
+					how_to_use: "Cómo Usar",
+					instruction_select:
+						"Presiona el botón del Stream Deck para enviar la reacción de emoji seleccionada en Google Meet.",
+					instruction_icon: "El botón mostrará el emoji que hayas seleccionado.",
+					instruction_tab: "Asegúrate de tener una pestaña activa de Google Meet abierta.",
+					emoji_reactions: "Reacciones de Emoji",
+					troubleshooting: "Solución de Problemas",
+					troubleshooting_info: "Si el control de reacciones no funciona, asegúrate de que:",
+					troubleshooting_point1: "Google Meet esté abierto en una pestaña activa del navegador",
+					troubleshooting_point_extension: "La extensión de Chrome está instalada y tiene los permisos necesarios.",
+				},
+				esCO: {
+					reaction_settings_title: "Configuración de Reacciones",
+					how_to_use: "Cómo Usar",
+					instruction_select:
+						"Presiona el botón del Stream Deck para enviar la reacción de emoji seleccionada en Google Meet.",
+					instruction_icon: "El botón mostrará el emoji que hayas seleccionado.",
+					instruction_tab: "Asegúrate de tener una pestaña activa de Google Meet abierta.",
+					emoji_reactions: "Reacciones de Emoji",
+					troubleshooting: "Solución de Problemas",
+					troubleshooting_info: "Si el control de reacciones no funciona, asegúrate de que:",
+					troubleshooting_point1: "Google Meet esté abierto en una pestaña activa del navegador",
+					troubleshooting_point_extension: "La extensión de Chrome está instalada y tiene los permisos necesarios.",
+				},
+				fr: {
+					reaction_settings_title: "Paramètres des Réactions",
+					how_to_use: "Comment Utiliser",
+					instruction_select:
+						"Appuyez sur le bouton Stream Deck pour envoyer la réaction emoji sélectionnée dans Google Meet.",
+					instruction_icon: "Le bouton affichera l'emoji que vous avez sélectionné.",
+					instruction_tab: "Assurez-vous d'avoir un onglet Google Meet actif ouvert.",
+					emoji_reactions: "Réactions Emoji",
+					troubleshooting: "Dépannage",
+					troubleshooting_info: "Si le contrôle des réactions ne fonctionne pas, assurez-vous que :",
+					troubleshooting_point1: "Google Meet est ouvert dans un onglet actif du navigateur",
+					troubleshooting_point_extension: "L'extension Chrome est installée et dispose des autorisations nécessaires.",
+				},
+				frFR: {
+					reaction_settings_title: "Paramètres des Réactions",
+					how_to_use: "Comment Utiliser",
+					instruction_select:
+						"Appuyez sur le bouton Stream Deck pour envoyer la réaction emoji sélectionnée dans Google Meet.",
+					instruction_icon: "Le bouton affichera l'emoji que vous avez sélectionné.",
+					instruction_tab: "Assurez-vous d'avoir un onglet Google Meet actif ouvert.",
+					emoji_reactions: "Réactions Emoji",
+					troubleshooting: "Dépannage",
+					troubleshooting_info: "Si le contrôle des réactions ne fonctionne pas, assurez-vous que :",
+					troubleshooting_point1: "Google Meet est ouvert dans un onglet actif du navigateur",
+					troubleshooting_point_extension: "L'extension Chrome est installée et dispose des autorisations nécessaires.",
+				},
+				frCA: {
+					reaction_settings_title: "Paramètres des Réactions",
+					how_to_use: "Comment Utiliser",
+					instruction_select:
+						"Appuyez sur le bouton Stream Deck pour envoyer la réaction emoji sélectionnée dans Google Meet.",
+					instruction_icon: "Le bouton affichera l'emoji que vous avez sélectionné.",
+					instruction_tab: "Assurez-vous d'avoir un onglet Google Meet actif ouvert.",
+					emoji_reactions: "Réactions Emoji",
+					troubleshooting: "Dépannage",
+					troubleshooting_info: "Si le contrôle des réactions ne fonctionne pas, assurez-vous que :",
+					troubleshooting_point1: "Google Meet est ouvert dans un onglet actif du navigateur",
+					troubleshooting_point_extension: "L'extension Chrome est installée et dispose des autorisations nécessaires.",
+				},
+				frBE: {
+					reaction_settings_title: "Paramètres des Réactions",
+					how_to_use: "Comment Utiliser",
+					instruction_select:
+						"Appuyez sur le bouton Stream Deck pour envoyer la réaction emoji sélectionnée dans Google Meet.",
+					instruction_icon: "Le bouton affichera l'emoji que vous avez sélectionné.",
+					instruction_tab: "Assurez-vous d'avoir un onglet Google Meet actif ouvert.",
+					emoji_reactions: "Réactions Emoji",
+					troubleshooting: "Dépannage",
+					troubleshooting_info: "Si le contrôle des réactions ne fonctionne pas, assurez-vous que :",
+					troubleshooting_point1: "Google Meet est ouvert dans un onglet actif du navigateur",
+					troubleshooting_point_extension: "L'extension Chrome est installée et dispose des autorisations nécessaires.",
+				},
+				frCH: {
+					reaction_settings_title: "Paramètres des Réactions",
+					how_to_use: "Comment Utiliser",
+					instruction_select:
+						"Appuyez sur le bouton Stream Deck pour envoyer la réaction emoji sélectionnée dans Google Meet.",
+					instruction_icon: "Le bouton affichera l'emoji que vous avez sélectionné.",
+					instruction_tab: "Assurez-vous d'avoir un onglet Google Meet actif ouvert.",
+					emoji_reactions: "Réactions Emoji",
+					troubleshooting: "Dépannage",
+					troubleshooting_info: "Si le contrôle des réactions ne fonctionne pas, assurez-vous que :",
+					troubleshooting_point1: "Google Meet est ouvert dans un onglet actif du navigateur",
+					troubleshooting_point_extension: "L'extension Chrome est installée et dispose des autorisations nécessaires.",
+				},
+				ja: {
+					reaction_settings_title: "リアクション設定",
+					how_to_use: "使い方",
+					instruction_select: "Stream Deckボタンを押してGoogle Meetで選択した絵文字リアクションを送信します。",
+					instruction_icon: "選択した絵文字がボタンに表示されます。",
+					instruction_tab: "アクティブなGoogle Meetタブが開いていることを確認してください。",
+					emoji_reactions: "絵文字リアクション",
+					troubleshooting: "トラブルシューティング",
+					troubleshooting_info: "リアクションコントロールが機能しない場合は、以下を確認してください：",
+					troubleshooting_point1: "Google Meetがアクティブなブラウザタブで開いています",
+					troubleshooting_point_extension: "Chrome拡張機能がインストールされており、必要な権限があります。",
+				},
+				ko: {
+					reaction_settings_title: "반응 설정",
+					how_to_use: "사용 방법",
+					instruction_select: "Stream Deck 버튼을 눌러 Google Meet에서 선택한 이모지 반응을 보냅니다.",
+					instruction_icon: "버튼은 선택한 이모지를 표시합니다.",
+					instruction_tab: "활성화된 Google Meet 탭이 열려 있는지 확인하세요.",
+					emoji_reactions: "이모지 반응",
+					troubleshooting: "문제 해결",
+					troubleshooting_info: "반응 제어가 작동하지 않는 경우 다음을 확인하세요:",
+					troubleshooting_point1: "Google Meet가 활성 브라우저 탭에서 열려 있음",
+					troubleshooting_point_extension: "Chrome 확장 프로그램이 설치되어 있고 필요한 권한이 부여되어 있음.",
+				},
+				zh: {
+					reaction_settings_title: "表情反应设置",
+					how_to_use: "如何使用",
+					instruction_select: "按下 Stream Deck 按钮以在 Google Meet 中发送所选表情反应。",
+					instruction_icon: "按钮会显示你选择的表情。",
+					instruction_tab: "请确保您已打开一个处于活动状态的 Google Meet 标签页。",
+					emoji_reactions: "表情反应",
+					troubleshooting: "故障排除",
+					troubleshooting_info: "如果表情反应无法正常工作，请确保：",
+					troubleshooting_point1: "Google Meet 已在活动的浏览器标签页中打开",
+					troubleshooting_point_extension: "已安装 Chrome 扩展程序并具有必要的权限。",
+				},
+				zhCN: {
+					reaction_settings_title: "表情反应设置",
+					how_to_use: "如何使用",
+					instruction_select: "按下 Stream Deck 按钮以在 Google Meet 中发送所选表情反应。",
+					instruction_icon: "按钮会显示你选择的表情。",
+					instruction_tab: "请确保您已打开一个处于活动状态的 Google Meet 标签页。",
+					emoji_reactions: "表情反应",
+					troubleshooting: "故障排除",
+					troubleshooting_info: "如果表情反应无法正常工作，请确保：",
+					troubleshooting_point1: "Google Meet 已在活动的浏览器标签页中打开",
+					troubleshooting_point_extension: "已安装 Chrome 扩展程序并具有必要的权限。",
+				},
+				zhTW: {
+					reaction_settings_title: "表情反应设置",
+					how_to_use: "如何使用",
+					instruction_select: "按下 Stream Deck 按钮以在 Google Meet 中发送所选表情反应。",
+					instruction_icon: "按钮会显示你选择的表情。",
+					instruction_tab: "请确保您已打开一个处于活动状态的 Google Meet 标签页。",
+					emoji_reactions: "表情反应",
+					troubleshooting: "故障排除",
+					troubleshooting_info: "如果表情反应无法正常工作，请确保：",
+					troubleshooting_point1: "Google Meet 已在活动的浏览器标签页中打开",
+					troubleshooting_point_extension: "已安装 Chrome 扩展程序并具有必要的权限。",
+				},
+				zhHK: {
+					reaction_settings_title: "表情反应设置",
+					how_to_use: "如何使用",
+					instruction_select: "按下 Stream Deck 按钮以在 Google Meet 中发送所选表情反应。",
+					instruction_icon: "按钮会显示你选择的表情。",
+					instruction_tab: "请确保您已打开一个处于活动状态的 Google Meet 标签页。",
+					emoji_reactions: "表情反应",
+					troubleshooting: "故障排除",
+					troubleshooting_info: "如果表情反应无法正常工作，请确保：",
+					troubleshooting_point1: "Google Meet 已在活动的浏览器标签页中打开",
+					troubleshooting_point_extension: "已安装 Chrome 扩展程序并具有必要的权限。",
+				},
+				zhSG: {
+					reaction_settings_title: "表情反应设置",
+					how_to_use: "如何使用",
+					instruction_select: "按下 Stream Deck 按钮以在 Google Meet 中发送所选表情反应。",
+					instruction_icon: "按钮会显示你选择的表情。",
+					instruction_tab: "请确保您已打开一个处于活动状态的 Google Meet 标签页。",
+					emoji_reactions: "表情反应",
+					troubleshooting: "故障排除",
+					troubleshooting_info: "如果表情反应无法正常工作，请确保：",
+					troubleshooting_point1: "Google Meet 已在活动的浏览器标签页中打开",
+					troubleshooting_point_extension: "已安装 Chrome 扩展程序并具有必要的权限。",
+				},
+				de: {
+					reaction_settings_title: "Reaktions-Einstellungen",
+					how_to_use: "Verwendung",
+					instruction_select:
+						"Drücken Sie die Stream Deck-Taste, um die ausgewählte Emoji-Reaktion in Google Meet zu senden.",
+					instruction_icon: "Die Schaltfläche zeigt das von Ihnen ausgewählte Emoji an.",
+					instruction_tab: "Stellen Sie sicher, dass Sie einen aktiven Google Meet-Tab geöffnet haben.",
+					emoji_reactions: "Emoji-Reaktionen",
+					troubleshooting: "Fehlerbehebung",
+					troubleshooting_info: "Wenn die Reaktionssteuerung nicht funktioniert, stellen Sie sicher, dass:",
+					troubleshooting_point1: "Google Meet in einem aktiven Browser-Tab geöffnet ist",
+					troubleshooting_point_extension:
+						"Die Chrome-Erweiterung ist installiert und verfügt über die erforderlichen Berechtigungen.",
+				},
+				deDE: {
+					reaction_settings_title: "Reaktions-Einstellungen",
+					how_to_use: "Verwendung",
+					instruction_select:
+						"Drücken Sie die Stream Deck-Taste, um die ausgewählte Emoji-Reaktion in Google Meet zu senden.",
+					instruction_icon: "Die Schaltfläche zeigt das von Ihnen ausgewählte Emoji an.",
+					instruction_tab: "Stellen Sie sicher, dass Sie einen aktiven Google Meet-Tab geöffnet haben.",
+					emoji_reactions: "Emoji-Reaktionen",
+					troubleshooting: "Fehlerbehebung",
+					troubleshooting_info: "Wenn die Reaktionssteuerung nicht funktioniert, stellen Sie sicher, dass:",
+					troubleshooting_point1: "Google Meet in einem aktiven Browser-Tab geöffnet ist",
+					troubleshooting_point_extension:
+						"Die Chrome-Erweiterung ist installiert und verfügt über die erforderlichen Berechtigungen.",
+				},
+				deAT: {
+					reaction_settings_title: "Reaktions-Einstellungen",
+					how_to_use: "Verwendung",
+					instruction_select:
+						"Drücken Sie die Stream Deck-Taste, um die ausgewählte Emoji-Reaktion in Google Meet zu senden.",
+					instruction_icon: "Die Schaltfläche zeigt das von Ihnen ausgewählte Emoji an.",
+					instruction_tab: "Stellen Sie sicher, dass Sie einen aktiven Google Meet-Tab geöffnet haben.",
+					emoji_reactions: "Emoji-Reaktionen",
+					troubleshooting: "Fehlerbehebung",
+					troubleshooting_info: "Wenn die Reaktionssteuerung nicht funktioniert, stellen Sie sicher, dass:",
+					troubleshooting_point1: "Google Meet in einem aktiven Browser-Tab geöffnet ist",
+					troubleshooting_point_extension:
+						"Die Chrome-Erweiterung ist installiert und verfügt über die erforderlichen Berechtigungen.",
+				},
+				deCH: {
+					reaction_settings_title: "Reaktions-Einstellungen",
+					how_to_use: "Verwendung",
+					instruction_select:
+						"Drücken Sie die Stream Deck-Taste, um die ausgewählte Emoji-Reaktion in Google Meet zu senden.",
+					instruction_icon: "Die Schaltfläche zeigt das von Ihnen ausgewählte Emoji an.",
+					instruction_tab: "Stellen Sie sicher, dass Sie einen aktiven Google Meet-Tab geöffnet haben.",
+					emoji_reactions: "Emoji-Reaktionen",
+					troubleshooting: "Fehlerbehebung",
+					troubleshooting_info: "Wenn die Reaktionssteuerung nicht funktioniert, stellen Sie sicher, dass:",
+					troubleshooting_point1: "Google Meet in einem aktiven Browser-Tab geöffnet ist",
+					troubleshooting_point_extension:
+						"Die Chrome-Erweiterung ist installiert und verfügt über die erforderlichen Berechtigungen.",
+				},
+			};
+		</script>
+		<style>
+			@media (max-width: 600px) {
+				sdpi-item[responsive] {
+					display: block;
+					width: 100%;
+				}
+				sdpi-radio[responsive] {
+					grid-template-columns: repeat(3, 1fr) !important;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<sdpi-item>
+			<details>
+				<summary><sdpi-i18n key="how_to_use"></sdpi-i18n></summary>
+				<p><sdpi-i18n key="instruction_select"></sdpi-i18n></p>
+				<p><sdpi-i18n key="instruction_icon"></sdpi-i18n></p>
+				<p><sdpi-i18n key="instruction_tab"></sdpi-i18n></p>
+			</details>
+		</sdpi-item>
+		<sdpi-item label="__MSG_emoji_reactions__" responsive>
+			<sdpi-radio setting="reaction" columns="3" responsive>
+				<option value="thumbsup">👍</option>
+				<option value="thumbsdown">👎</option>
+				<option value="clap">👏</option>
+				<option value="heart">💖</option>
+				<option value="laugh">😂</option>
+				<option value="sad">😢</option>
+				<option value="wow">😮</option>
+				<option value="thinking">🤔</option>
+				<option value="party">🎉</option>
+			</sdpi-radio>
+		</sdpi-item>
+		<sdpi-item>
+			<details>
+				<summary><sdpi-i18n key="troubleshooting"></sdpi-i18n></summary>
+				<div>
+					<p><sdpi-i18n key="troubleshooting_info"></sdpi-i18n></p>
+					<ul>
+						<li><sdpi-i18n key="troubleshooting_point1"></sdpi-i18n></li>
+						<li><sdpi-i18n key="troubleshooting_point_extension"></sdpi-i18n></li>
+					</ul>
+				</div>
+			</details>
+		</sdpi-item>
+	</body>
+</html>

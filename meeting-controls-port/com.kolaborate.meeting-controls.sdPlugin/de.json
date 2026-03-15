@@ -1,0 +1,59 @@
+{
+    "Name": "Meeting-Steuerung für Stream Deck",
+    "Description": "Steuern Sie Videoanrufe direkt von Ihrem Stream Deck mit schnellem Zugriff auf wichtige Meeting-Steuerungen",
+    "Category": "Meeting-Steuerung für Stream Deck",
+    "com.kolaborate.meeting-controls.microphone": {
+        "Name": "Mikrofon",
+        "Tooltip": "Mikrofon im Meeting ein-/ausschalten",
+        "States": [
+            {
+                "Name": "Deaktiviert"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.camera": {
+        "Name": "Kamera",
+        "Tooltip": "Kamera im Meeting ein-/ausschalten",
+        "States": [
+            {
+                "Name": "Deaktiviert"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.hand": {
+        "Name": "Hand",
+        "Tooltip": "Hand im Meeting heben/senken",
+        "States": [
+            {
+                "Name": "Hand gehoben"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.leave": {
+        "Name": "Verlassen",
+        "Tooltip": "Aktuelle Besprechung verlassen",
+        "States": [
+            {
+                "Name": "Meeting\nverlassen"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.reaction": {
+        "Name": "Reaktion",
+        "Tooltip": "Zeigt eine ausgewählte Reaktion an.",
+        "States": [
+            {
+                "Name": ""
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.presentnow": {
+        "Name": "Präsentieren",
+        "Tooltip": "Bildschirmfreigabe im Meeting starten oder beenden",
+        "States": [
+            {
+                "Name": "Präsentation\nstarten"
+            }
+        ]
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PPT Freeze</title>
+  <link rel="stylesheet" href="../../libs/css/udpi.css">
+</head>
+<body>
+  <div class="udpi-wrapper hidden">
+    <form id="property-inspector">
+      <div class="udpi-item">
+        <label class="udpi-item-label">Monitor</label>
+        <select class="udpi-item-value" id="monitorIndex">
+          <option value="-1">Auto (prefer secondary)</option>
+          <option value="0">Monitor 1 / primary</option>
+          <option value="1">Monitor 2</option>
+          <option value="2">Monitor 3</option>
+          <option value="3">Monitor 4</option>
+        </select>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Off Label</label>
+        <input class="udpi-item-value" id="labelWhenOff" type="text" maxlength="10" value="LIVE">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">On Label</label>
+        <input class="udpi-item-value" id="labelWhenOn" type="text" maxlength="10" value="FREEZE">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Freeze State</label>
+        <input class="udpi-item-value" id="isFrozen" type="text" readonly value="false">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Helper Status</label>
+        <input class="udpi-item-value" id="helperStatus" type="text" readonly value="unknown">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Resolved Monitor</label>
+        <input class="udpi-item-value" id="resolvedMonitorIndex" type="text" readonly value="-">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Detected Monitors</label>
+        <textarea class="udpi-item-value" id="monitorsText" readonly rows="5"></textarea>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Last Error</label>
+        <textarea class="udpi-item-value" id="lastError" readonly rows="4"></textarea>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Info</label>
+        <textarea class="udpi-item-value" readonly rows="5">LIVE = saida ao vivo. FREEZE = saida travada por uma imagem fixa. Auto prefere a segunda tela.</textarea>
+      </div>
+    </form>
+  </div>
+
+  <script src="../../libs/js/constants.js"></script>
+  <script src="../../libs/js/eventEmitter.js"></script>
+  <script src="../../libs/js/timers.js"></script>
+  <script src="../../libs/js/utils.js"></script>
+  <script src="../../libs/js/ulanzideckApi.js"></script>
+  <script src="./inspector.js"></script>
+</body>
+</html>

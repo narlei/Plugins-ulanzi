@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WS Action</title>
+  <link rel="stylesheet" href="../../libs/css/udpi.css">
+</head>
+<body>
+  <div class="udpi-wrapper hidden">
+    <form id="property-inspector">
+      <div class="udpi-item">
+        <label class="udpi-item-label">Action ID</label>
+        <input name="actionId" type="text" placeholder="scene.switch">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Args JSON</label>
+        <textarea name="argsJson" rows="5" placeholder='{"scene":"Intro"}'></textarea>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">WebSocket URL</label>
+        <input name="wsUrl" type="text" placeholder="ws://localhost:8059">
+      </div>
+    </form>
+  </div>
+
+  <script src="../../libs/js/constants.js"></script>
+  <script src="../../libs/js/eventEmitter.js"></script>
+  <script src="../../libs/js/timers.js"></script>
+  <script src="../../libs/js/utils.js"></script>
+  <script src="../../libs/js/ulanzideckApi.js"></script>
+  <script src="./inspector.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #1f1f1f;
+  color: #f2f2f2;
+}
+
+.hidden {
+  display: none;
+}
+
+.udpi-wrapper {
+  padding: 12px;
+}
+
+.udpi-item {
+  margin-bottom: 10px;
+}
+
+.udpi-item-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 8px;
+  background: #2a2a2a;
+  color: #f2f2f2;
+}

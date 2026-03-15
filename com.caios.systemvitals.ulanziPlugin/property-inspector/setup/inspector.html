@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>System Vitals</title>
+  <link rel="stylesheet" href="../../libs/css/udpi.css">
+</head>
+<body>
+  <div class="udpi-wrapper hidden">
+    <form id="property-inspector">
+      <div class="udpi-item">
+        <label class="udpi-item-label">Monitor</label>
+        <select class="udpi-item-value" id="monitor" name="monitor">
+          <option value="CPU_PERCENT">CPU - % Usage</option>
+          <option value="RAM_PERCENT">RAM - % Usage</option>
+          <option value="RAM_GB">RAM - GB Usage</option>
+          <option value="CPU_WATT_LHW">CPU - Watt Power (LibreHardwareMonitor)</option>
+          <option value="CPU_TEMP_LHW">CPU - Temp (LibreHardwareMonitor)</option>
+          <option value="GPU_TEMP_LHW">GPU - Temp (LibreHardwareMonitor)</option>
+          <option value="AIO_TEMP_LHW">AIO - Liquid Temp (LibreHardwareMonitor)</option>
+          <option value="WIFI_PERCENT">WiFi - % Signal Strength</option>
+          <option value="HDD_C_PERCENT">Drive C - % Usage</option>
+          <option value="HDD_D_PERCENT">Drive D - % Usage</option>
+          <option value="HDD_E_PERCENT">Drive E - % Usage</option>
+          <option value="HDD_F_PERCENT">Drive F - % Usage</option>
+          <option value="BATTERY_PERCENT">Battery - % Level</option>
+          <option value="SIM_PERCENT">Simulation - Fixed 35%</option>
+          <option value="RANDOM_PERCENT">Simulation - Random %</option>
+        </select>
+      </div>
+
+      <div class="udpi-item">
+        <label class="udpi-item-label">Libre URL</label>
+        <input class="udpi-item-value" id="libreUrl" name="libreUrl" type="text" placeholder="auto (ex: http://127.0.0.1:8085)">
+      </div>
+
+      <div class="udpi-item">
+        <label class="udpi-item-label">Libre Sensor Key</label>
+        <input class="udpi-item-value" id="libreKey" name="libreKey" type="text" placeholder="optional (ex: Tctl, Package, PPT)">
+      </div>
+
+      <div class="udpi-item">
+        <label class="udpi-item-label">Polling (fixed)</label>
+        <input class="udpi-item-value" id="pollingRateMs" name="pollingRateMs" type="number" value="500" readonly>
+      </div>
+
+      <div class="udpi-item">
+        <label class="udpi-item-label">Auto Color</label>
+        <input class="udpi-item-value" id="useDynamicColor" name="useDynamicColor" type="checkbox" checked>
+      </div>
+
+      <div class="udpi-item">
+        <label class="udpi-item-label">Line Color</label>
+        <input class="udpi-item-value" id="lineColor" name="lineColor" type="color" value="#1ed760">
+      </div>
+
+      <div class="udpi-item">
+        <label class="udpi-item-label">Fill Color</label>
+        <input class="udpi-item-value" id="fillColor" name="fillColor" type="color" value="#1ed760">
+      </div>
+
+      <div class="udpi-item">
+        <label class="udpi-item-label">Panel Color</label>
+        <input class="udpi-item-value" id="bgColor" name="bgColor" type="color" value="#101622">
+      </div>
+
+      <div class="udpi-item">
+        <button class="udpi-item-value" type="button" id="refreshNowBtn">Refresh Now</button>
+      </div>
+
+      <div class="udpi-item">
+        <label class="udpi-item-label">Status</label>
+        <input class="udpi-item-value" id="statusLine" type="text" value="Ready" readonly>
+      </div>
+    </form>
+  </div>
+
+  <script src="../../libs/js/constants.js"></script>
+  <script src="../../libs/js/eventEmitter.js"></script>
+  <script src="../../libs/js/timers.js"></script>
+  <script src="../../libs/js/utils.js"></script>
+  <script src="../../libs/js/ulanzideckApi.js"></script>
+  <script src="./inspector.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿{
+  "Version": "1.0.0",
+  "Author": "caios",
+  "Name": "Meeting Controls",
+  "Description": "Google Meet controls for Ulanzi Deck",
+  "Icon": "assets/icons/icon.png",
+  "Category": "Meeting Controls",
+  "CategoryIcon": "assets/icons/category.svg",
+  "CodePath": "plugin/main.js",
+  "Type": "JavaScript",
+  "PrivateAPI": true,
+  "SupportedInMultiActions": false,
+  "UUID": "com.caios.ulanzideck.meetingcontrols",
+  "Actions": [
+    {
+      "Name": "Microphone",
+      "Icon": "assets/icons/microphone.svg",
+      "PropertyInspectorPath": "property-inspector/basic/inspector.html",
+      "state": 0,
+      "States": [{ "Image": "assets/actions/microphone/toggleMicrophoneOffDisabled.svg" }],
+      "Tooltip": "Toggle meeting microphone",
+      "UUID": "com.caios.ulanzideck.meetingcontrols.microphone",
+      "SupportedInMultiActions": false
+    },
+    {
+      "Name": "Camera",
+      "Icon": "assets/icons/camera.svg",
+      "PropertyInspectorPath": "property-inspector/basic/inspector.html",
+      "state": 0,
+      "States": [{ "Image": "assets/actions/camera/toggleCameraOffDisabled.svg" }],
+      "Tooltip": "Toggle meeting camera",
+      "UUID": "com.caios.ulanzideck.meetingcontrols.camera",
+      "SupportedInMultiActions": false
+    },
+    {
+      "Name": "Hand",
+      "Icon": "assets/icons/hand.svg",
+      "PropertyInspectorPath": "property-inspector/basic/inspector.html",
+      "state": 0,
+      "States": [{ "Image": "assets/actions/hand/raiseHandDisabled.svg" }],
+      "Tooltip": "Raise/lower hand",
+      "UUID": "com.caios.ulanzideck.meetingcontrols.hand",
+      "SupportedInMultiActions": false
+    },
+    {
+      "Name": "Leave",
+      "Icon": "assets/icons/leave.svg",
+      "PropertyInspectorPath": "property-inspector/basic/inspector.html",
+      "state": 0,
+      "States": [{ "Image": "assets/actions/leave/leaveCallDisabled.svg" }],
+      "Tooltip": "Leave meeting",
+      "UUID": "com.caios.ulanzideck.meetingcontrols.leave",
+      "SupportedInMultiActions": false
+    },
+    {
+      "Name": "Reaction",
+      "Icon": "assets/icons/reaction.svg",
+      "PropertyInspectorPath": "property-inspector/reaction/inspector.html",
+      "state": 0,
+      "States": [{ "Image": "assets/actions/reaction/+1Disabled.svg" }],
+      "Tooltip": "Send reaction",
+      "UUID": "com.caios.ulanzideck.meetingcontrols.reaction",
+      "SupportedInMultiActions": false
+    }
+  ],
+  "OS": [
+    { "Platform": "windows", "MinimumVersion": "10" }
+  ],
+  "Software": {
+    "MinimumVersion": "6.1"
+  }
+}

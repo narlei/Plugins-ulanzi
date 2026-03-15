@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Status Inspector</title>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 12px; }
+      label { display: block; margin-top: 10px; font-weight: 600; }
+      input { width: 100%; box-sizing: border-box; margin-top: 4px; }
+      button { margin-top: 12px; padding: 8px 10px; cursor: pointer; }
+      small { color: #555; display: block; margin-top: 8px; }
+    </style>
+  </head>
+  <body>
+    <label for="onlineText">Online text</label>
+    <input id="onlineText" type="text" placeholder="ONLINE" />
+
+    <label for="offlineText">Offline text</label>
+    <input id="offlineText" type="text" placeholder="OFFLINE" />
+
+    <button id="saveBtn">Save</button>
+    <small id="status"></small>
+
+    <script src="./inspector.js"></script>
+  </body>
+</html>

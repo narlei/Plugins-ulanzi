@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Meeting Controls</title>
+  <link rel="stylesheet" href="../../libs/css/udpi.css">
+</head>
+<body>
+  <div class="udpi-wrapper hidden">
+    <form id="property-inspector">
+      <div class="udpi-item">
+        <label class="udpi-item-label">Server Status</label>
+        <input class="udpi-item-value" id="serverStatus" type="text" readonly value="offline">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Socket Port</label>
+        <input class="udpi-item-value" id="serverPort" type="text" readonly value="-">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Meeting Open</label>
+        <input class="udpi-item-value" id="isMeetingOpen" type="text" readonly value="false">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Active Profile</label>
+        <input class="udpi-item-value" id="activeProfile" type="text" readonly value="">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Info</label>
+        <textarea class="udpi-item-value" readonly rows="5">Use com a extensão do navegador Kolaborate/Google Meet. Este plugin abre servidor local Socket.IO em 35623 (fallback 35624/35625).</textarea>
+      </div>
+    </form>
+  </div>
+
+  <script src="../../libs/js/constants.js"></script>
+  <script src="../../libs/js/eventEmitter.js"></script>
+  <script src="../../libs/js/timers.js"></script>
+  <script src="../../libs/js/utils.js"></script>
+  <script src="../../libs/js/ulanzideckApi.js"></script>
+  <script src="./inspector.js"></script>
+</body>
+</html>

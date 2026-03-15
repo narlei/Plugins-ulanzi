@@ -1,0 +1,11 @@
+{
+  "Localization": {
+    "Play Sound": "播放声音",
+    "Play Random Sound": "随机播放声音",
+    "Pause/Unpause Sound": "暂停/恢复",
+    "Remove sound from Playlist": "从列表移除声音",
+    "Stop": "停止",
+    "Record PTT": "录音按住说话",
+    "Load Sound List": "加载声音列表"
+  }
+}

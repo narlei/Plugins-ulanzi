@@ -1,0 +1,42 @@
+{
+  "Version": "1.0.0",
+  "Author": "caios",
+  "Name": "Audio Meter",
+  "Description": "Audio and MIDI levels for Ulanzi Deck",
+  "Icon": "assets/icons/icon.png",
+  "Category": "Audio Meter",
+  "CategoryIcon": "assets/icons/icon.png",
+  "CodePath": "plugin/main.js",
+  "Type": "JavaScript",
+  "PrivateAPI": true,
+  "SupportedInMultiActions": false,
+  "UUID": "com.caios.ulanzideck.audiometer",
+  "Actions": [
+    {
+      "Name": "Audio Meter",
+      "Icon": "assets/icons/action.png",
+      "PropertyInspectorPath": "property-inspector/audio/inspector.html",
+      "state": 0,
+      "States": [{ "Image": "assets/icons/action.png" }],
+      "Tooltip": "Shows playback/recording levels",
+      "UUID": "com.caios.ulanzideck.audiometer.audio",
+      "SupportedInMultiActions": false
+    },
+    {
+      "Name": "Midi Meter",
+      "Icon": "assets/icons/action.png",
+      "PropertyInspectorPath": "property-inspector/midi/inspector.html",
+      "state": 0,
+      "States": [{ "Image": "assets/icons/action.png" }],
+      "Tooltip": "Shows MIDI CC level",
+      "UUID": "com.caios.ulanzideck.audiometer.midi",
+      "SupportedInMultiActions": false
+    }
+  ],
+  "OS": [
+    { "Platform": "windows", "MinimumVersion": "10" }
+  ],
+  "Software": {
+    "MinimumVersion": "6.1"
+  }
+}

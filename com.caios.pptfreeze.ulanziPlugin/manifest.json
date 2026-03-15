@@ -1,0 +1,35 @@
+{
+  "Version": "1.0.0",
+  "Author": "caios",
+  "Name": "PPT Freeze",
+  "Description": "Freeze and unfreeze the presentation output with a fullscreen still image overlay",
+  "Icon": "assets/icons/icon.svg",
+  "Category": "PPT Freeze",
+  "CategoryIcon": "assets/icons/category.svg",
+  "CodePath": "plugin/main.js",
+  "Type": "JavaScript",
+  "PrivateAPI": true,
+  "SupportedInMultiActions": false,
+  "UUID": "com.caios.ulanzideck.pptfreeze",
+  "Actions": [
+    {
+      "Name": "Freeze Toggle",
+      "Icon": "assets/icons/action-off.svg",
+      "PropertyInspectorPath": "property-inspector/setup/inspector.html",
+      "state": 0,
+      "States": [
+        { "Image": "assets/icons/action-off.svg" },
+        { "Image": "assets/icons/action-on.svg" }
+      ],
+      "Tooltip": "Freeze or unfreeze the presentation screen",
+      "UUID": "com.caios.ulanzideck.pptfreeze.toggle",
+      "SupportedInMultiActions": false
+    }
+  ],
+  "OS": [
+    { "Platform": "windows", "MinimumVersion": "10" }
+  ],
+  "Software": {
+    "MinimumVersion": "6.1"
+  }
+}

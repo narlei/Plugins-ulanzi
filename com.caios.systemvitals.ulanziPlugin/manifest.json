@@ -1,0 +1,34 @@
+﻿{
+  "Version": "1.0.0",
+  "Author": "caios",
+  "Name": "System Vitals",
+  "Description": "System monitoring metrics for Ulanzi Deck",
+  "Icon": "assets/icons/icon.png",
+  "Category": "System Vitals",
+  "CategoryIcon": "assets/icons/icon.png",
+  "CodePath": "plugin/main.js",
+  "Type": "JavaScript",
+  "PrivateAPI": true,
+  "SupportedInMultiActions": false,
+  "UUID": "com.caios.ulanzideck.systemvitals",
+  "Actions": [
+    {
+      "Name": "System Vitals",
+      "Icon": "assets/icons/action.png",
+      "PropertyInspectorPath": "property-inspector/setup/inspector.html",
+      "state": 0,
+      "States": [
+        { "Image": "assets/icons/action.png" }
+      ],
+      "Tooltip": "System Vitals",
+      "UUID": "com.caios.ulanzideck.systemvitals.plugin",
+      "SupportedInMultiActions": false
+    }
+  ],
+  "OS": [
+    { "Platform": "windows", "MinimumVersion": "10" }
+  ],
+  "Software": {
+    "MinimumVersion": "6.1"
+  }
+}

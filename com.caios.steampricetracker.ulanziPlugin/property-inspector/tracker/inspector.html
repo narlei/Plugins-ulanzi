@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Steam Price Tracker</title>
+  <link rel="stylesheet" href="../../libs/css/udpi.css">
+</head>
+<body>
+  <div class="udpi-wrapper hidden">
+    <form id="property-inspector">
+      <div class="udpi-item">
+        <label class="udpi-item-label">App Name or ID</label>
+        <input class="udpi-item-value" id="searchQuery" name="searchQuery" type="text" placeholder="Ex: Counter-Strike 2 ou 730">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Country Code</label>
+        <input class="udpi-item-value" id="countryCode" name="countryCode" type="text" maxlength="5" placeholder="auto / BR / US">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Hide Currency</label>
+        <input id="hideCurrency" name="hideCurrency" type="checkbox">
+      </div>
+      <div class="udpi-item">
+        <button class="udpi-item-value" type="button" id="resolveBtn">Resolve App</button>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Resolved App</label>
+        <input class="udpi-item-value" id="appName" name="appName" type="text" readonly>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">App ID</label>
+        <input class="udpi-item-value" id="appId" name="appId" type="text" readonly>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Status</label>
+        <input class="udpi-item-value" id="resolveStatus" name="resolveStatus" type="text" readonly>
+      </div>
+    </form>
+  </div>
+
+  <script src="../../libs/js/constants.js"></script>
+  <script src="../../libs/js/eventEmitter.js"></script>
+  <script src="../../libs/js/timers.js"></script>
+  <script src="../../libs/js/utils.js"></script>
+  <script src="../../libs/js/ulanzideckApi.js"></script>
+  <script src="./inspector.js"></script>
+</body>
+</html>

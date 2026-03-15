@@ -1,0 +1,39 @@
+{
+  "Actions": [
+    {
+      "Icon": "images/icon", 
+      "Name": "System Vitals", 
+      "States": [
+        {
+          "Image": "images/defaultImage",
+          "TitleAlignment": "middle"  
+        }
+      ], 
+      "SupportedInMultiActions": false,
+      "Tooltip": "System Vitals", 
+      "UUID": "com.vivremotion.systemvitals.plugin"
+    }
+  ], 
+  "SDKVersion": 2,
+  "Author": "VIVRE-MOTION", 
+  "Category": "System Vitals",
+  "CategoryIcon": "images/category", 
+  "CodePath": "index.htm",
+  "CodePathWin": "systemvitals.proxy.vivremotion.exe", 
+  "PropertyInspectorPath": "setup.html",
+  "Description": "Monitoring tool to track System Vital metrics", 
+  "Name": "System Vitals", 
+  "Icon": "images/pluginIcon", 
+  "URL": "https://www.vivre-motion.com", 
+  "Version": "1.9",
+  "OS": [
+    {
+        "Platform": "windows", 
+        "MinimumVersion" : "10"
+    }
+  ],
+  "Software": 
+    {
+        "MinimumVersion" : "5.0"
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "Name": "ミーティングコントロール for Stream Deck",
+    "Description": "Stream Deck から直接ビデオ通話を制御し、重要な会議コントロールにすばやくアクセス",
+    "Category": "ミーティングコントロール for Stream Deck",
+    "com.kolaborate.meeting-controls.microphone": {
+        "Name": "マイク",
+        "Tooltip": "ミーティングでマイクのミュート/ミュート解除を切り替える",
+        "States": [
+            {
+                "Name": "無効"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.camera": {
+        "Name": "カメラ",
+        "Tooltip": "ミーティングでカメラのオン/オフを切り替える",
+        "States": [
+            {
+                "Name": "無効"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.hand": {
+        "Name": "挙手",
+        "Tooltip": "ミーティングで手を上げる/下げる",
+        "States": [
+            {
+                "Name": "挙手中"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.leave": {
+        "Name": "退出",
+        "Tooltip": "現在のミーティングから退出する",
+        "States": [
+            {
+                "Name": "ミーティング\n退出"
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.reaction": {
+        "Name": "リアクション",
+        "Tooltip": "選択したリアクションを表示します。",
+        "States": [
+            {
+                "Name": ""
+            }
+        ]
+    },
+    "com.kolaborate.meeting-controls.presentnow": {
+        "Name": "画面共有",
+        "Tooltip": "ミーティングで画面共有を開始または停止する",
+        "States": [
+            {
+                "Name": "共有\n開始"
+            }
+        ]
+    }
+}

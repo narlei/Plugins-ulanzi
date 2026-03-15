@@ -1,0 +1,92 @@
+{
+  "Version": "1.0.1",
+  "Author": "caios",
+  "Name": "Soundpad Integration",
+  "Description": "Soundpad integration for Ulanzi Deck",
+  "Icon": "assets/icons/icon.svg",
+  "Category": "Soundpad",
+  "CategoryIcon": "assets/icons/icon.svg",
+  "CodePath": "plugin/main.js",
+  "Type": "JavaScript",
+  "PrivateAPI": true,
+  "SupportedInMultiActions": false,
+  "UUID": "com.caios.ulanzideck.soundpad",
+  "Actions": [
+    {
+      "Name": "Play Sound",
+      "Icon": "assets/icons/iconplay.png",
+      "PropertyInspectorPath": "property-inspector/play/inspector.html",
+      "state": 0,
+      "States": [{ "Image": "assets/icons/state-play.png" }],
+      "Tooltip": "Play a sound from Soundpad by index",
+      "UUID": "com.caios.ulanzideck.soundpad.play",
+      "SupportedInMultiActions": false
+    },
+    {
+      "Name": "Play Random Sound",
+      "Icon": "assets/icons/iconplayrand.png",
+      "PropertyInspectorPath": "property-inspector/play-random/inspector.html",
+      "state": 0,
+      "States": [{ "Image": "assets/icons/state-random.png" }],
+      "Tooltip": "Play a random sound",
+      "UUID": "com.caios.ulanzideck.soundpad.playrandom",
+      "SupportedInMultiActions": false
+    },
+    {
+      "Name": "Pause/Unpause Sound",
+      "Icon": "assets/icons/iconpause.png",
+      "PropertyInspectorPath": "property-inspector/basic/inspector.html",
+      "state": 0,
+      "States": [{ "Image": "assets/icons/state-pause.png" }],
+      "Tooltip": "Toggle pause",
+      "UUID": "com.caios.ulanzideck.soundpad.pause",
+      "SupportedInMultiActions": false
+    },
+    {
+      "Name": "Remove sound from Playlist",
+      "Icon": "assets/icons/iconremove.png",
+      "PropertyInspectorPath": "property-inspector/remove/inspector.html",
+      "state": 0,
+      "States": [{ "Image": "assets/icons/state-remove.png" }],
+      "Tooltip": "Remove a sound by index",
+      "UUID": "com.caios.ulanzideck.soundpad.remove",
+      "SupportedInMultiActions": false
+    },
+    {
+      "Name": "Stop",
+      "Icon": "assets/icons/iconstop.png",
+      "PropertyInspectorPath": "property-inspector/basic/inspector.html",
+      "state": 0,
+      "States": [{ "Image": "assets/icons/state-stop.png" }],
+      "Tooltip": "Stop current sound",
+      "UUID": "com.caios.ulanzideck.soundpad.stop",
+      "SupportedInMultiActions": false
+    },
+    {
+      "Name": "Record PTT",
+      "Icon": "assets/icons/iconrecord.png",
+      "PropertyInspectorPath": "property-inspector/basic/inspector.html",
+      "state": 0,
+      "States": [{ "Image": "assets/icons/state-record.png" }],
+      "Tooltip": "Toggle recording",
+      "UUID": "com.caios.ulanzideck.soundpad.recordptt",
+      "SupportedInMultiActions": false
+    },
+    {
+      "Name": "Load Sound List",
+      "Icon": "assets/icons/iconload.png",
+      "PropertyInspectorPath": "property-inspector/load/inspector.html",
+      "state": 0,
+      "States": [{ "Image": "assets/icons/state-load.png" }],
+      "Tooltip": "Load a .spl file",
+      "UUID": "com.caios.ulanzideck.soundpad.loadsoundlist",
+      "SupportedInMultiActions": false
+    }
+  ],
+  "OS": [
+    { "Platform": "windows", "MinimumVersion": "10" }
+  ],
+  "Software": {
+    "MinimumVersion": "6.1"
+  }
+}

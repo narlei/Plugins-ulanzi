@@ -1,0 +1,57 @@
+{
+  "Version": "1.0.0",
+  "Author": "caios",
+  "Name": "WS Starter",
+  "Description": "WebSocket action and status starter plugin",
+  "Icon": "assets/icons/icon.svg",
+  "Category": "Automation",
+  "CategoryIcon": "assets/icons/icon.svg",
+  "CodePath": "plugin/app.html",
+  "Type": "JavaScript",
+  "PrivateAPI": true,
+  "SupportedInMultiActions": false,
+  "UUID": "com.caios.ulanzideck.wsstarter",
+  "Actions": [
+    {
+      "Name": "Run WebSocket Action",
+      "Icon": "assets/icons/icon.svg",
+      "PropertyInspectorPath": "property-inspector/action/inspector.html",
+      "state": 0,
+      "States": [
+        {
+          "Image": "assets/icons/icon.svg"
+        }
+      ],
+      "Tooltip": "Send a JSON command to WebSocket service",
+      "UUID": "com.caios.ulanzideck.wsstarter.action",
+      "SupportedInMultiActions": false
+    },
+    {
+      "Name": "WebSocket Status",
+      "Icon": "assets/icons/icon.svg",
+      "PropertyInspectorPath": "property-inspector/status/inspector.html",
+      "state": 0,
+      "States": [
+        {
+          "Image": "assets/icons/icon.svg"
+        }
+      ],
+      "Tooltip": "Show online/offline status from WebSocket connection",
+      "UUID": "com.caios.ulanzideck.wsstarter.status",
+      "SupportedInMultiActions": false
+    }
+  ],
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.1"
+  }
+}

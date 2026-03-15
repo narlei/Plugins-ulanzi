@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Soundpad Play</title>
+  <link rel="stylesheet" href="../../libs/css/udpi.css">
+</head>
+<body>
+  <div class="udpi-wrapper hidden">
+    <form id="property-inspector">
+      <div class="udpi-item">
+        <label class="udpi-item-label">Category</label>
+        <select class="udpi-item-value" id="categoryIndex" name="categoryIndex"></select>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Sound</label>
+        <select class="udpi-item-value" id="soundIndex" name="soundIndex"></select>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Sound Index</label>
+        <input class="udpi-item-value" id="manualSoundIndex" name="soundIndexManual" type="number" min="0" placeholder="Sound index shown in Soundpad">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Show Title</label>
+        <input id="showSoundTitle" name="showSoundTitle" type="checkbox">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">PTP Mode</label>
+        <input id="pushToPlay" name="pushToPlay" type="checkbox">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Refresh Sounds</label>
+        <button class="udpi-item-value" type="button" id="refreshBtn">Refresh</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="../../libs/js/constants.js"></script>
+  <script src="../../libs/js/eventEmitter.js"></script>
+  <script src="../../libs/js/timers.js"></script>
+  <script src="../../libs/js/utils.js"></script>
+  <script src="../../libs/js/ulanzideckApi.js"></script>
+  <script src="./inspector.js"></script>
+</body>
+</html>

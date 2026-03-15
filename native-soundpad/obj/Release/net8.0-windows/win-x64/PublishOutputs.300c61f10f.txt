@@ -1,0 +1,7 @@
+C:\Users\caios\OneDrive\Documentos\Codex\native-soundpad\bin\com.caios.soundpad.native.exe
+C:\Users\caios\OneDrive\Documentos\Codex\native-soundpad\bin\com.caios.soundpad.native.dll
+C:\Users\caios\OneDrive\Documentos\Codex\native-soundpad\bin\com.caios.soundpad.native.deps.json
+C:\Users\caios\OneDrive\Documentos\Codex\native-soundpad\bin\com.caios.soundpad.native.runtimeconfig.json
+C:\Users\caios\OneDrive\Documentos\Codex\native-soundpad\bin\com.caios.soundpad.native.pdb
+C:\Users\caios\OneDrive\Documentos\Codex\native-soundpad\bin\Newtonsoft.Json.dll
+C:\Users\caios\OneDrive\Documentos\Codex\native-soundpad\bin\SoundpadConnector.dll

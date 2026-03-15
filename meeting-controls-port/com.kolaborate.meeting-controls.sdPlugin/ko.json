@@ -1,0 +1,41 @@
+{
+    "Name": "미팅 컨트롤 for Stream Deck",
+    "Description": "Stream Deck에서 화상 회의를 직접 제어하고 필수 회의 컨트롤에 빠르게 액세스하세요.",
+    "Category": "미팅 컨트롤 for Stream Deck",
+    "com.kolaborate.meeting-controls.microphone": {
+        "Name": "마이크",
+        "Tooltip": "회의에서 마이크 음소거/해제 전환",
+        "States": [
+            { "Name": "비활성화됨" }]
+    },
+    "com.kolaborate.meeting-controls.camera": {
+        "Name": "카메라",
+        "Tooltip": "회의에서 카메라 켜기/끄기 전환",
+        "States": [
+            { "Name": "비활성화됨" }]
+    },
+    "com.kolaborate.meeting-controls.hand": {
+        "Name": "손 들기",
+        "Tooltip": "회의에서 손 들기/내리기",
+        "States": [
+            { "Name": "손 들기" }]
+    },
+    "com.kolaborate.meeting-controls.leave": {
+        "Name": "나가기",
+        "Tooltip": "현재 회의에서 나가기",
+        "States": [
+            { "Name": "회의 나가기" }]
+    },
+    "com.kolaborate.meeting-controls.reaction": {
+        "Name": "반응",
+        "Tooltip": "선택한 반응을 표시합니다.",
+        "States": [
+            { "Name": "" }]
+    },
+    "com.kolaborate.meeting-controls.presentnow": {
+        "Name": "지금 발표",
+        "Tooltip": "회의에서 화면 공유 시작 또는 중지",
+        "States": [
+            { "Name": "발표 시작" }]
+    }
+}

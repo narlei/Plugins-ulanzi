@@ -1,0 +1,2394 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>com.systemvitals.setup</title>
+    <link rel="stylesheet" href="css/sdpi.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="js/common.js"></script>
+    <script src="js/cover.js"></script>
+    <script src="js/sweetalert.js"></script>
+    <script src="js/fontawesome.672.all.min.js"></script>
+	
+</head>
+
+<body>
+
+    <div class="sdpi-wrapper">
+  
+        <div type="group" class="sdpi-item">
+            <div class="sdpi-item-group" id="messagegroup_items">
+                <div type="select" class="sdpi-item" id="messagegroup_account">
+                    <div class="sdpi-item-label">Monitor</div>
+                    <select id="my_monitor_event" class="sdpi-item-value select" onclick="SelectMonitor()" oninput="SelectMonitor()" onchange="SelectMonitor()">
+                        <option disabled>Simulation / Test</option>
+                        <option value="SIM_PERCENT" >Simulation ▬ % Percent Test</option>
+                        <option value="SIM_VALUE" >Simulation ▬ Value Test</option>
+                        <option value="RANDOM_PERCENT" selected>Random ▬ % Percent Test</option>
+                        <option disabled>Ping Requests</option>
+                        <option value="PING_GOOGLE" >PING ▬ Google DNS 8.8.8.8</option>
+                        <option value="PING_CLOUDFLARE" >PING ▬ Cloudflare DNS 1.1.1.1</option>
+                        <option value="PING_CUSTOM" >PING ▬ Custom IP</option>
+                        <!-- <option disabled>Frames-per-Second (FPS)</option> -->
+                        <!-- <option value="FPS_RTSSS" >FPS ▬ Frames-per-Second</option> -->
+                        <option disabled>Temperature Sensors (°C)</option>
+                        <option value="GPU_TEMP_NVIDIA" >GPU ▬ °C Temp (NVIDIA) ᴺⱽᴹᴸ</option>
+                        <option value="GPU_TEMP_LHW" >GPU ▬ °C Temp ᴸᴴᴹ</option>
+                        <option value="CPU_TEMP_LHW" >CPU ▬ °C Temp ᴸᴴᴹ</option>
+                        <option value="AIO_TEMP_LHW" >AIO ▬ °C Liquid Temp ᴸᴴᴹ</option>
+                        <option disabled>Usage (%) Percent</option>
+                        <option value="CPU_PERCENT">CPU ▬ % Usage</option>
+                        <option value="GPU_PERCENT">GPU ▬ % Usage (NVIDIA) ᴺⱽᴹᴸ</option>
+                        <option value="RAM_PERCENT">RAM ▬ % Usage</option>
+                        <option value="VRAM_PERCENT_NVIDIA">VRAM ▬ % Usage (NVIDIA) ᴺⱽᴹᴸ</option>
+                        <option disabled>Power Consumption (Watt)</option>
+                        <option value="GPU_WATT_NVIDIA">GPU ▬ Watt Power (NVIDIA) ᴺⱽᴹᴸ</option>
+                        <option value="CPU_WATT_LHW">CPU ▬ Watt Power ᴸᴴᴹ</option>
+                        <option disabled>Level (%) Percent</option>
+                        <option value="BATTERY_PERCENT">Battery ▬ % Level</option>
+                        <option value="WIFI_PERCENT">WiFi ▬ % Signal Strength</option>
+                        <option value="AUDIO_PERCENT">Master Audio ▬ % Volume</option>
+                        <option disabled>Usage (MB, GB)</option>
+                        <option value="RAM_GB" >RAM ▬ GB Usage</option>
+                        <option disabled>Data Transfer (MB/s, GB/s)</option>
+                        <option value="LAN_MB" >LAN ▬ MB/s Traffic</option>
+                        <option value="LAN_MBP" >LAN ▬ MBps Traffic</option>
+                        <option disabled>Disk I/O Throughput (GB/s)</option>
+                        <option value="DRIVE_0_GBS">Drive 0 ▬ GB/s I/O</option>
+                        <option value="DRIVE_1_GBS">Drive 1 ▬ GB/s I/O</option>
+                        <option value="DRIVE_2_GBS">Drive 2 ▬ GB/s I/O</option>
+                        <option value="DRIVE_3_GBS">Drive 3 ▬ GB/s I/O</option>
+                        <option value="DRIVE_4_GBS">Drive 4 ▬ GB/s I/O</option>
+                        <option value="DRIVE_5_GBS">Drive 5 ▬ GB/s I/O</option>
+                        <option value="DRIVE_6_GBS">Drive 6 ▬ GB/s I/O</option>
+                        <option value="DRIVE_7_GBS">Drive 7 ▬ GB/s I/O</option>
+                        <option value="DRIVE_8_GBS">Drive 8 ▬ GB/s I/O</option>
+                        <option value="DRIVE_9_GBS">Drive 9 ▬ GB/s I/O</option>
+                        <option disabled>Custom LHM Slots</option>
+                        <option value="CUSTOM_LHW_1">Custom Slot #1 ᴸᴴᴹ</option>
+                        <option value="CUSTOM_LHW_2">Custom Slot #2 ᴸᴴᴹ</option>
+                        <option value="CUSTOM_LHW_3">Custom Slot #3 ᴸᴴᴹ</option>
+                        <option value="CUSTOM_LHW_4">Custom Slot #4 ᴸᴴᴹ</option>
+                        <option value="CUSTOM_LHW_5">Custom Slot #5 ᴸᴴᴹ</option>
+                        <option value="CUSTOM_LHW_6">Custom Slot #6 ᴸᴴᴹ</option>
+                        <option value="CUSTOM_LHW_7">Custom Slot #7 ᴸᴴᴹ</option>
+                        <option value="CUSTOM_LHW_8">Custom Slot #8 ᴸᴴᴹ</option>
+                        <option value="CUSTOM_LHW_9">Custom Slot #9 ᴸᴴᴹ</option>
+                        <option value="CUSTOM_LHW_10">Custom Slot #10 ᴸᴴᴹ</option>
+                        <option disabled>Disk Usage (%)</option>
+                        <option value="HDD_A_PERCENT">Drive A: ▬ % Usage</option>
+                        <option value="HDD_B_PERCENT">Drive B: ▬ % Usage</option>
+                        <option value="HDD_C_PERCENT">Drive C: ▬ % Usage</option>
+                        <option value="HDD_D_PERCENT">Drive D: ▬ % Usage</option>
+                        <option value="HDD_E_PERCENT">Drive E: ▬ % Usage</option>
+                        <option value="HDD_F_PERCENT">Drive F: ▬ % Usage</option>
+                        <option value="HDD_G_PERCENT">Drive G: ▬ % Usage</option>
+                        <option value="HDD_H_PERCENT">Drive H: ▬ % Usage</option>
+                        <option value="HDD_I_PERCENT">Drive I: ▬ % Usage</option>
+                        <option value="HDD_J_PERCENT">Drive J: ▬ % Usage</option>
+                        <option value="HDD_K_PERCENT">Drive K: ▬ % Usage</option>
+                        <option value="HDD_L_PERCENT">Drive L: ▬ % Usage</option>
+                        <option value="HDD_M_PERCENT">Drive M: ▬ % Usage</option>
+                        <option value="HDD_N_PERCENT">Drive N: ▬ % Usage</option>
+                        <option value="HDD_O_PERCENT">Drive O: ▬ % Usage</option>
+                        <option value="HDD_P_PERCENT">Drive P: ▬ % Usage</option>
+                        <option value="HDD_Q_PERCENT">Drive Q: ▬ % Usage</option>
+                        <option value="HDD_R_PERCENT">Drive R: ▬ % Usage</option>
+                        <option value="HDD_S_PERCENT">Drive S: ▬ % Usage</option>
+                        <option value="HDD_T_PERCENT">Drive T: ▬ % Usage</option>
+                        <option value="HDD_U_PERCENT">Drive U: ▬ % Usage</option>
+                        <option value="HDD_V_PERCENT">Drive V: ▬ % Usage</option>
+                        <option value="HDD_W_PERCENT">Drive W: ▬ % Usage</option>
+                        <option value="HDD_X_PERCENT">Drive X: ▬ % Usage</option>
+                        <option value="HDD_Y_PERCENT">Drive Y: ▬ % Usage</option>
+                        <option value="HDD_Z_PERCENT">Drive Z: ▬ % Usage</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="sdpi-item alignTop noInnerMargins">                
+            <div class="sdpi-item alignTop noInnerMargins">
+                <div class="sdpi-item-label"></div>     
+                <details>
+                    <summary>More Information</summary> 
+                    <br><span id="more_information" class="more-information">###</span><br><br>
+                </details>
+            </div>
+        </div>   
+
+        <span id="custom_ip">
+
+            <div type="input" class="sdpi-item" title="required">
+                <div class="sdpi-item-label" >Libre Webserver</div>
+                <input id="my_custom_ip" oninput="SaveConfig()" style="font-family:Lucida Console, Courier New, Arial;color:white"  onchange="SaveConfig()" class="sdpi-item-value" value="192.168.2.1" placeholder="192.168.2.1" >
+            </div>  
+
+        </span>
+
+        <span id="libre_webserver">
+
+            <div type="input" class="sdpi-item" title="required">
+                <div class="sdpi-item-label" ></div>
+                <div class="libre-flag">ℹ️ LIBRE HARDWARE MONITOR REQUIRED</div>
+            </div>  
+            
+            <div type="input" class="sdpi-item" title="required">
+                <div class="sdpi-item-label" >Libre Webserver</div>
+                <input id="my_libre_webserver" oninput="SaveConfig()" style="font-family:Lucida Console, Courier New, Arial;color:white"  onchange="SaveConfig()" class="sdpi-item-value" value="" placeholder="http://192.168.2.187:8085/" >
+            </div>  
+
+            <div type="input" class="sdpi-item" title="required">
+                <div class="sdpi-item-label" >Key Name</div>
+                <input id="my_libre_key" oninput="SaveConfig()" style="font-family:Lucida Console, Courier New, Arial;color:white"  onchange="SaveConfig()" class="sdpi-item-value" value="" placeholder="Core (Tctl/Tdie)" >
+            </div>  
+
+        </span>
+
+        <span id="simulation_value">
+
+            <div type="range" class="sdpi-item">
+                <div class="sdpi-item-label" id="label_simulation">Percent</div>
+                <div class="sdpi-item-value">	
+                    <button class="slider_button" onclick="changeStep(-1,my_simulation)">-</button>                	
+                    <input class="slider_special" onmousemove="changeValue()" onmouseleave="changeValue()" onclick="changeValue()" type="range" min="0" max="100" step="1" value="35" id="my_simulation">  
+                    <button class="slider_button" onclick="changeStep(1,my_simulation)">+</button>     	
+                </div>
+            </div> 
+
+        </span>
+
+
+
+        <span id="lan_adapter_name" style="display:none">
+            <div type="input" class="sdpi-item">
+                <div class="sdpi-item-label" title="" id="invert_back">Ethernet Adapter</div>
+                <input id="my_lan_adapter"  class="sdpi-item-value monotype" placeholder="Ethernet 1" oninput="SaveConfig()" onchange="SaveConfig()">
+            </div>  
+
+            <div class="sdpi-item alignTop noInnerMargins">                
+                <div class="sdpi-item alignTop noInnerMargins">
+                    <div class="sdpi-item-label"></div>     
+                        If empty, the primary adapter is used<br><br>
+                </div>
+            </div>   
+        </span>
+
+
+        <div type="range" class="sdpi-item" style="margin-top:10px">
+            <div class="sdpi-item-label" id="label_polling_rate">Polling</div>
+            <div class="sdpi-item-value">	
+                <button class="slider_button" onclick="changeStep(-100,my_polling_rate)">-</button>                	
+                <input class="slider_special" onmousemove="changeValue()" onmouseleave="changeValue()" onclick="changeValue()" type="range" min="100" max="120000" step="100" value="1000" id="my_polling_rate">  
+                <button class="slider_button" onclick="changeStep(100,my_polling_rate)">+</button>     	
+            </div>
+        </div> 
+
+        <div class="sdpi-item alignTop noInnerMargins">                
+            <div class="sdpi-item alignTop noInnerMargins">
+                <div class="sdpi-item-label"></div>     
+                <details>
+                    <summary>More Information</summary> 
+                    <br>The polling rate defines how often a new measurement value should be retrieved (heartbeat).<br><br>The actual display speed (FPS) depends on the specific monitoring method and how quickly the data can be read.<br><br>However, the actual sampling may take longer if the measurement function itself requires more time than the polling interval.<br><br>As a result, the effective acquisition rate may be lower than the configured polling rate.<br><br>The polling rate in Libre Hardware Monitor depends on the sampling interval and cannot exceed it.<br><br>
+                </details>
+            </div>
+        </div>  
+
+        <hr>
+
+        <div type="input" class="sdpi-item" title="required">
+            <div class="sdpi-item-label">Status <span style="color:white;" id="heart_beat"></span></div>
+            <div id="status_line" style="color:white;padding-left:6px;">...</div>
+        </div>  
+
+         <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <div class="sdpi-heading">VALUE DISPLAY TEXT</div>
+
+        <div type="input" class="sdpi-item" title="required">
+            <div class="sdpi-item-label" >Unit Value</div>
+            <input id="my_extension" oninput="SaveConfig()" style="font-family:Lucida Console, Courier New, Arial;color:white"  onchange="SaveConfig()" class="sdpi-item-value" value='<tspan font-size="100" baseline-shift="super">%</tspan>'; placeholder='<tspan font-size="100" baseline-shift="super">%</tspan>'; >
+        </div>  
+
+       <details><summary style="margin-left:80px"><span style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ADVANCED SETUP</span></summary>
+
+        <hr>
+
+        <div class="sdpi-item"> 
+            <div class="sdpi-item-label"></div><span></span>        	
+            <button onClick="pasteUnitValue()" class="sdpi-item-value">Set Unit Percent Superscript</button>   
+        </div>
+           <div class="sdpi-item"> 
+            <div class="sdpi-item-label"></div><span></span>        	
+            <small>Format unit character as superscript with a special &lt;tspan&gt; tag
+            <br><br>
+            LHM and assigns it to the variable %LHM%
+        </small>
+        </div>
+
+        <hr>
+
+        <div type="range" class="sdpi-item" style="margin-top:10px">
+            <div class="sdpi-item-label" id="label_value_stroke_size">Stroke Size (0)</div>
+            <div class="sdpi-item-value">	
+                <button class="slider_button" onclick="changeStep(-5,my_value_stroke_size)">-</button>                	
+                <input class="slider_special" onmousemove="changeValue()" onmouseleave="changeValue()" onclick="changeValue()" type="range" min="0" max="60" step="5" value="20" id="my_value_stroke_size">  
+                <button class="slider_button" onclick="changeStep(5,my_value_stroke_size)">+</button>     	
+            </div>
+        </div>
+
+        <div type="range" class="sdpi-item" style="margin-top:10px">
+            <div class="sdpi-item-label" id="label_value_font_size">Font Size (0)</div>
+            <div class="sdpi-item-value">	
+                <button class="slider_button" onclick="changeStep(-1,my_value_fontsize)">-</button>                	
+                <input class="slider_special" onmousemove="changeValue()" onmouseleave="changeValue()" onclick="changeValue()" type="range" min="10" max="300" step="1" value="200" id="my_value_fontsize">  
+                <button class="slider_button" onclick="changeStep(1,my_value_fontsize)">+</button>     	
+            </div>
+        </div> 
+
+        <div type="input" class="sdpi-item" style="display:flex">
+            <div class="sdpi-item-label" title="" id="invert_back">Font Color</div>
+            <input id="my_value_color"  class="sdpi-item-value monotype" maxlength="7" placeholder="#FFFFFF" value="#FFFFFF" oninput="trySetIconColorValueManually()" onchange="trySetIconColorValueManually()">
+        </div>  
+
+        <div class="sdpi-item alignTop noInnerMargins" id="color_warning_value" style="display:none;">
+            <div class="sdpi-item-label"></div>                
+            <summary><span style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';color:#FF0000">❗ Wrong HEX Color Code!</span></summary>
+        </div>
+
+        <div class="sdpi-item alignTop noInnerMargins">
+            <div class="sdpi-item-label"></div>   
+            <div>
+                <button onclick="trySetIconColorValue(216, 0, 255)" style="background-color:#D800FF;" title="COLOR #D800FF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(102, 255, 255)" style="background-color:#66FFFF;" title="COLOR #66FFFF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(180, 255, 0)" style="background-color:#B4FF00;" title="COLOR #B4FF00" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(0, 0, 255)" style="background-color:#0000FF;" title="COLOR #0000FF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(204, 204, 255)" style="background-color:#CCCCFF;" title="COLOR #CCCCFF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(0, 255, 0)" style="background-color:#00FF00;" title="COLOR #00FF00" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(255, 255, 255)" style="background-color:#FFFFFF;" title="COLOR #FFFFFF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(255, 253, 1)" style="background-color:#FFFD01;" title="COLOR #FFFD01" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(204, 34, 30)" style="background-color:#CC221E;" title="COLOR #CC221E" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(93, 83, 94)" style="background-color:#5D535E;" title="COLOR #5D535E" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(25, 184, 235)" style="background-color:#19B8EB;" title="COLOR #19B8EB" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(64, 224, 208)" style="background-color:#40E0D0;" title="COLOR #40E0D0" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(142, 36, 98)" style="background-color:#8E2462;" title="COLOR #8E2462" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(247, 0, 231)" style="background-color:#F700E7;" title="COLOR #F700E7" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(198, 0, 108)" style="background-color:#C6006C;" title="COLOR #C6006C" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(161, 214, 226)" style="background-color:#A1D6E2;" title="COLOR #A1D6E2" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(254, 167, 0)" style="background-color:#FEA700;" title="COLOR #FEA700" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(60, 88, 154)" style="background-color:#3C589A;" title="COLOR #3C589A" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(132, 151, 176)" style="background-color:#8497B0;" title="COLOR #8497B0" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(177, 143, 106)" style="background-color:#B18F6A;" title="COLOR #B18F6A" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(223, 207, 190)" style="background-color:#DFCFBE;" title="COLOR #DFCFBE" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(107, 91, 149)" style="background-color:#6B5B95;" title="COLOR #6B5B95" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(173, 204, 0)" style="background-color:#ADCC00;" title="COLOR #ADCC00" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(71, 222, 234)" style="background-color:#47DEEA;" title="COLOR #47DEEA" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(0, 0, 0)" style="background-color:#000000;" title="COLOR #000000" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(247, 216, 0)" style="background-color:#F7D800;" title="COLOR #F7D800" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(139, 0, 247)" style="background-color:#8B00F7;" title="COLOR #8B00F7" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(255, 0, 0)" style="background-color:#FF0000;" title="COLOR #FF0000" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(0, 41, 60)" style="background-color:#00293C;" title="COLOR #00293C" class="color_button" value=""></button>
+                <button onclick="trySetIconColorValue(223, 225, 102)" style="background-color:#DFE166;" title="COLOR #DFE166" class="color_button" value=""></button>              
+                <button onclick="trySetIconColorValue(0, 108, 132)" style="background-color:#006C84;" title="COLOR #006C84" class="color_button" value=""></button>                
+                <button onclick="trySetIconColorValue(245, 202, 230)" style="background-color:#F5CAE6;" title="F5CAE6" class="color_button" value=""></button>
+            </div>   
+
+            </div>
+        </details>        
+
+         <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <div class="sdpi-heading">TITLE DISPLAY TEXT</div>
+
+        <div type="input" class="sdpi-item" title="required">
+            <div class="sdpi-item-label" >Title</div>
+            <input id="my_title" oninput="SaveConfig()" onchange="SaveConfig()" class="sdpi-item-value" value="CPU"  placeholder="CPU" >
+        </div>  
+
+        <details><summary style="margin-left:80px"><span style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ADVANCED SETUP</span></summary>
+
+        <div type="range" class="sdpi-item" style="margin-top:10px">
+            <div class="sdpi-item-label" id="label_title_stroke_size">Stroke Size (0)</div>
+            <div class="sdpi-item-value">	
+                <button class="slider_button" onclick="changeStep(-5,my_title_stroke_size)">-</button>                	
+                <input class="slider_special" onmousemove="changeValue()" onmouseleave="changeValue()" onclick="changeValue()" type="range" min="0" max="60" step="5" value="10" id="my_title_stroke_size">  
+                <button class="slider_button" onclick="changeStep(5,my_title_stroke_size)">+</button>     	
+            </div>
+        </div>
+
+        <div type="range" class="sdpi-item" style="margin-top:10px">
+            <div class="sdpi-item-label" id="label_title_font_size">Font Size (0)</div>
+            <div class="sdpi-item-value">	
+                <button class="slider_button" onclick="changeStep(-1,my_title_fontsize)">-</button>                	
+                <input class="slider_special" onmousemove="changeValue()" onmouseleave="changeValue()" onclick="changeValue()" type="range" min="10" max="300" step="1" value="72" id="my_title_fontsize">  
+                <button class="slider_button" onclick="changeStep(1,my_title_fontsize)">+</button>     	
+            </div>
+        </div> 
+
+        <div type="input" class="sdpi-item" style="display:flex">
+            <div class="sdpi-item-label" title="" id="invert_back">Font Color</div>
+            <input id="my_title_color"  class="sdpi-item-value monotype" maxlength="7" placeholder="#FFFFFF" value="#FFFFFF" oninput="trySetIconColorTitleManually()" onchange="trySetIconColorTitleManually()">
+        </div>  
+
+        <div class="sdpi-item alignTop noInnerMargins" id="color_warning_title" style="display:none;">
+            <div class="sdpi-item-label"></div>                
+            <summary><span style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';color:#FF0000">❗ Wrong HEX Color Code!</span></summary>
+        </div>
+
+        <div class="sdpi-item alignTop noInnerMargins">
+            <div class="sdpi-item-label"></div>   
+            <div>
+                <button onclick="trySetIconColorTitle(216, 0, 255)" style="background-color:#D800FF;" title="COLOR #D800FF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(102, 255, 255)" style="background-color:#66FFFF;" title="COLOR #66FFFF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(180, 255, 0)" style="background-color:#B4FF00;" title="COLOR #B4FF00" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(0, 0, 255)" style="background-color:#0000FF;" title="COLOR #0000FF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(204, 204, 255)" style="background-color:#CCCCFF;" title="COLOR #CCCCFF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(0, 255, 0)" style="background-color:#00FF00;" title="COLOR #00FF00" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(255, 255, 255)" style="background-color:#FFFFFF;" title="COLOR #FFFFFF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(255, 253, 1)" style="background-color:#FFFD01;" title="COLOR #FFFD01" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(204, 34, 30)" style="background-color:#CC221E;" title="COLOR #CC221E" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(93, 83, 94)" style="background-color:#5D535E;" title="COLOR #5D535E" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(25, 184, 235)" style="background-color:#19B8EB;" title="COLOR #19B8EB" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(64, 224, 208)" style="background-color:#40E0D0;" title="COLOR #40E0D0" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(142, 36, 98)" style="background-color:#8E2462;" title="COLOR #8E2462" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(247, 0, 231)" style="background-color:#F700E7;" title="COLOR #F700E7" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(198, 0, 108)" style="background-color:#C6006C;" title="COLOR #C6006C" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(161, 214, 226)" style="background-color:#A1D6E2;" title="COLOR #A1D6E2" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(254, 167, 0)" style="background-color:#FEA700;" title="COLOR #FEA700" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(60, 88, 154)" style="background-color:#3C589A;" title="COLOR #3C589A" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(132, 151, 176)" style="background-color:#8497B0;" title="COLOR #8497B0" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(177, 143, 106)" style="background-color:#B18F6A;" title="COLOR #B18F6A" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(223, 207, 190)" style="background-color:#DFCFBE;" title="COLOR #DFCFBE" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(107, 91, 149)" style="background-color:#6B5B95;" title="COLOR #6B5B95" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(173, 204, 0)" style="background-color:#ADCC00;" title="COLOR #ADCC00" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(71, 222, 234)" style="background-color:#47DEEA;" title="COLOR #47DEEA" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(0, 0, 0)" style="background-color:#000000;" title="COLOR #000000" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(247, 216, 0)" style="background-color:#F7D800;" title="COLOR #F7D800" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(139, 0, 247)" style="background-color:#8B00F7;" title="COLOR #8B00F7" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(255, 0, 0)" style="background-color:#FF0000;" title="COLOR #FF0000" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(0, 41, 60)" style="background-color:#00293C;" title="COLOR #00293C" class="color_button" value=""></button>
+                <button onclick="trySetIconColorTitle(223, 225, 102)" style="background-color:#DFE166;" title="COLOR #DFE166" class="color_button" value=""></button>              
+                <button onclick="trySetIconColorTitle(0, 108, 132)" style="background-color:#006C84;" title="COLOR #006C84" class="color_button" value=""></button>                
+                <button onclick="trySetIconColorTitle(245, 202, 230)" style="background-color:#F5CAE6;" title="F5CAE6" class="color_button" value=""></button>
+
+            </div>   
+
+            </div>
+        </details>    
+
+         <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <div class="sdpi-heading">MIN/MAX CHART SETUP</div>
+
+        <span id="section_minmax">            
+
+            <div type="range" class="sdpi-item" >
+                <div class="sdpi-item-label" id="label_min_value">Min Value</div>
+                <div class="sdpi-item-value">
+                    <input id="my_min_value" disabled oninput="SaveConfig()" style="font-family:Lucida Console, Courier New, Arial;color:white"  onchange="SaveConfig()" class="sdpi-item-value" value="0" placeholder="0" >
+                </div>
+            </div> 
+
+            <div type="range" class="sdpi-item">
+                <div class="sdpi-item-label" id="label_max_value">Max Value</div>
+                <div class="sdpi-item-value">	
+                    <input id="my_max_value" oninput="SaveConfig()" style="font-family:Lucida Console, Courier New, Arial;color:white"  onchange="SaveConfig()" class="sdpi-item-value" value="100" placeholder="100" > 	
+                </div>
+            </div> 
+
+            <div class="sdpi-item alignTop noInnerMargins">                
+                <div class="sdpi-item alignTop noInnerMargins">
+                    <div class="sdpi-item-label"></div>     
+                    <details>
+                        <summary>More Information</summary> 
+                        <br>The MAX setup defines the reference point for the chart line percentage calculation.
+                        <br><br>The values always need to be adjusted when setting custom LHM options, since, for example, the temperature range typically requires completely different maximum values than the fan speed.
+                        <br><br>
+                        MIN is currently set to 0 by default. If a percentage value is being read, the MAX sliders should be set to MAX=100.
+                        <br><br>
+                    </details>
+                </div>
+            </div>  
+
+        </span>
+
+        <span id="section_minmax_percent">
+
+            <div class="sdpi-item alignTop noInnerMargins">                
+                <div class="sdpi-item alignTop noInnerMargins">
+                    <div class="sdpi-item-label"></div>     
+                     <details>
+                        <summary>More Information</summary> 
+                        <br>MIN/MAX setup is not available for this selection:
+                        <br><br>
+                        ─ Percentage values are normalized with<br>a minimum of 0 and a maximum of 100
+                        <br><br>
+                        ─ For some system monitor values, the maximum is automatically determined based on the detected hardware.
+                        </details>
+                </div>
+            </div>  
+
+        </span>
+
+        <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <div class="sdpi-heading">CHART SETUP</div>
+
+        <div type="group" class="sdpi-item">
+            <div class="sdpi-item-group" id="messagegroup_items">
+                <div type="select" class="sdpi-item" id="messagegroup_account">
+                    <div class="sdpi-item-label">Chart Design</div>
+                    <select id="my_chart_design" class="sdpi-item-value select" onclick="updateChartDesign()" onchange="updateChartDesign()">
+                        <option value="CHART_FILL">Filled Area</option>
+                        <option value="CHART_PATTERN">Pattern Area</option>
+                        <option value="CHART_MATRIX">Dot Matrix</option>
+                        <option value="CHART_LINE" >Lines Course</option>
+                        <option value="CHART_LINE_POINTS" >Lines Course + Points</option>
+                        <option value="CHART_LINE_SOFT_FILL" selected>Lines Course + Soft-Fill</option>
+                     </select>
+                </div>
+            </div>
+        </div>
+
+        <span id="style_line_matrix">
+
+            <div type="range" class="sdpi-item" style="margin-top:10px">
+                <div class="sdpi-item-label" id="label_matrix_density">Density</div>
+                <div class="sdpi-item-value">	
+                    <button class="slider_button" onclick="changeStep(-1,my_matrix_density)">-</button>                	
+                    <input class="slider_special" onmousemove="changeValue()" onmouseleave="changeValue()" onclick="changeValue()" type="range" min="30" max="50" step="1" value="40" id="my_matrix_density">  
+                    <button class="slider_button" onclick="changeStep(1,my_matrix_density)">+</button>     	
+                </div>
+            </div>
+
+        </span>
+
+        <span id="style_line_points">
+
+            <div type="range" class="sdpi-item" style="margin-top:10px">
+                <div class="sdpi-item-label" id="label_matrix_point">Point</div>
+                <div class="sdpi-item-value">	
+                    <button class="slider_button" onclick="changeStep(-1,my_matrix_point)">-</button>                	
+                    <input class="slider_special" onmousemove="changeValue()" onmouseleave="changeValue()" onclick="changeValue()" type="range" min="5" max="50" step="1" value="8" id="my_matrix_point">  
+                    <button class="slider_button" onclick="changeStep(1,my_matrix_point)">+</button>     	
+                </div>
+            </div>
+
+        </span>
+
+        <span id="style_line_pattern">
+
+            <div type="range" class="sdpi-item" style="margin-top:10px">
+                <div class="sdpi-item-label" id="label_pattern_stroke">Stroke</div>
+                <div class="sdpi-item-value">	
+                    <button class="slider_button" onclick="changeStep(-1,my_pattern_stroke)">-</button>                	
+                    <input class="slider_special" onmousemove="changeValue()" onmouseleave="changeValue()" onclick="changeValue()" type="range" min="1" max="30" step="1" value="8" id="my_pattern_stroke">  
+                    <button class="slider_button" onclick="changeStep(1,my_pattern_stroke)">+</button>     	
+                </div>
+            </div> 
+
+            <div type="range" class="sdpi-item" style="margin-top:10px">
+                <div class="sdpi-item-label" id="label_pattern_space">Space</div>
+                <div class="sdpi-item-value">	
+                    <button class="slider_button" onclick="changeStep(-1,my_pattern_spacing)">-</button>                	
+                    <input class="slider_special" onmousemove="changeValue()" onmouseleave="changeValue()" onclick="changeValue()" type="range" min="1" max="50" step="1" value="16" id="my_pattern_spacing">  
+                    <button class="slider_button" onclick="changeStep(1,my_pattern_spacing)">+</button>     	
+                </div>
+            </div>
+
+            <div type="range" class="sdpi-item" style="margin-top:10px">
+                <div class="sdpi-item-label" id="label_pattern_rotation">Rotation</div>
+                <div class="sdpi-item-value">	
+                    <button class="slider_button" onclick="changeStep(-1,my_pattern_rotation)">-</button>                	
+                    <input class="slider_special" onmousemove="changeValue()" onmouseleave="changeValue()" onclick="changeValue()" type="range" min="0" max="360" step="1" value="45" id="my_pattern_rotation">  
+                    <button class="slider_button" onclick="changeStep(1,my_pattern_rotation)">+</button>     	
+                </div>
+            </div> 
+
+        </span>
+
+        <span id="style_opacity_top">
+
+            <div type="range" class="sdpi-item" style="margin-top:10px">
+                <div class="sdpi-item-label" id="label_fill_opacity">Opacity</div>
+                <div class="sdpi-item-value">	
+                    <button class="slider_button" onclick="changeStep(-1,my_fill_opacity)">-</button>                	
+                    <input class="slider_special" onmousemove="changeValue()" onmouseleave="changeValue()" onclick="changeValue()" type="range" min="0" max="100" step="1" value="100" id="my_fill_opacity">  
+                    <button class="slider_button" onclick="changeStep(1,my_fill_opacity)">+</button>     	
+                </div>
+            </div> 
+
+        </span>
+
+        <span id="style_opacity_bottom">
+
+            <div type="range" class="sdpi-item" style="margin-top:10px">
+                <div class="sdpi-item-label" id="label_fill_opacity_bottom">Opacity</div>
+                <div class="sdpi-item-value">	
+                    <button class="slider_button" onclick="changeStep(-1,my_fill_opacity_bottom)">-</button>                	
+                    <input class="slider_special" onmousemove="changeValue()" onmouseleave="changeValue()" onclick="changeValue()" type="range" min="0" max="100" step="1" value="100" id="my_fill_opacity_bottom">  
+                    <button class="slider_button" onclick="changeStep(1,my_fill_opacity_bottom)">+</button>     	
+                </div>
+            </div> 
+
+        </span>
+
+        <span id="style_line">
+
+            <div type="range" class="sdpi-item" style="margin-top:10px">
+                <div class="sdpi-item-label" id="label_line_stroke">Stroke</div>
+                <div class="sdpi-item-value">	
+                    <button class="slider_button" onclick="changeStep(-1,my_line_stroke)">-</button>                	
+                    <input class="slider_special" onmousemove="changeValue()" onmouseleave="changeValue()" onclick="changeValue()" type="range" min="5" max="100" step="1" value="40" id="my_line_stroke">  
+                    <button class="slider_button" onclick="changeStep(1,my_line_stroke)">+</button>     	
+                </div>
+            </div> 
+
+        </span>
+
+        <span id="style_padding">
+
+            <div type="range" class="sdpi-item" style="margin-top:10px">
+                <div class="sdpi-item-label" id="label_line_padding">Padding 0%</div>
+                <div class="sdpi-item-value">	
+                    <button class="slider_button" onclick="changeStep(-1,my_line_padding)">-</button>                	
+                    <input class="slider_special" onmousemove="changeValue()" onmouseleave="changeValue()" onclick="changeValue()" type="range" min="0" max="25" step="1" value="10" id="my_line_padding">  
+                    <button class="slider_button" onclick="changeStep(1,my_line_padding)">+</button>     	
+                </div>
+            </div> 
+
+            <div class="sdpi-item alignTop noInnerMargins">                
+                <div class="sdpi-item alignTop noInnerMargins">
+                    <div class="sdpi-item-label"></div>     
+                    <details>
+                        <summary>More Information</summary> 
+                        <br><span>Modified the Baseline Padding (Reference Zero Start Position)</span><br><br>
+                    </details>
+                </div>
+            </div>   
+
+        </span>
+
+        <div class="sdpi-heading">APPEARANCE COLOR</div>
+
+        <div type="input" class="sdpi-item" style="display:flex">
+            <div class="sdpi-item-label" title="" id="invert_back">Background</div>
+            <input id="my_background_color"  class="sdpi-item-value monotype" maxlength="7" placeholder="#12142D" value="#12142D" oninput="trySetIconColorBackgroundManually()" onchange="trySetIconColorBackgroundManually()">
+        </div>  
+
+        <div class="sdpi-item alignTop noInnerMargins" id="color_warning_background" style="display:none;">
+            <div class="sdpi-item-label"></div>                
+            <summary><span style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';color:#FF0000">❗ Wrong HEX Color Code!</span></summary>
+        </div>
+
+        <details><summary style="margin-left:80px"><span style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ADVANCED SETUP</span></summary>
+
+
+
+        <div class="sdpi-item alignTop noInnerMargins">
+            <div class="sdpi-item-label"></div>   
+            <div>
+                <button onclick="trySetIconColorBackground(216, 0, 255)" style="background-color:#D800FF;" title="COLOR #D800FF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(102, 255, 255)" style="background-color:#66FFFF;" title="COLOR #66FFFF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(180, 255, 0)" style="background-color:#B4FF00;" title="COLOR #B4FF00" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(0, 0, 255)" style="background-color:#0000FF;" title="COLOR #0000FF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(204, 204, 255)" style="background-color:#CCCCFF;" title="COLOR #CCCCFF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(0, 255, 0)" style="background-color:#00FF00;" title="COLOR #00FF00" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(255, 255, 255)" style="background-color:#FFFFFF;" title="COLOR #FFFFFF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(255, 253, 1)" style="background-color:#FFFD01;" title="COLOR #FFFD01" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(204, 34, 30)" style="background-color:#CC221E;" title="COLOR #CC221E" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(93, 83, 94)" style="background-color:#5D535E;" title="COLOR #5D535E" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(25, 184, 235)" style="background-color:#19B8EB;" title="COLOR #19B8EB" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(64, 224, 208)" style="background-color:#40E0D0;" title="COLOR #40E0D0" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(142, 36, 98)" style="background-color:#8E2462;" title="COLOR #8E2462" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(247, 0, 231)" style="background-color:#F700E7;" title="COLOR #F700E7" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(198, 0, 108)" style="background-color:#C6006C;" title="COLOR #C6006C" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(161, 214, 226)" style="background-color:#A1D6E2;" title="COLOR #A1D6E2" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(254, 167, 0)" style="background-color:#FEA700;" title="COLOR #FEA700" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(60, 88, 154)" style="background-color:#3C589A;" title="COLOR #3C589A" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(132, 151, 176)" style="background-color:#8497B0;" title="COLOR #8497B0" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(177, 143, 106)" style="background-color:#B18F6A;" title="COLOR #B18F6A" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(223, 207, 190)" style="background-color:#DFCFBE;" title="COLOR #DFCFBE" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(107, 91, 149)" style="background-color:#6B5B95;" title="COLOR #6B5B95" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(173, 204, 0)" style="background-color:#ADCC00;" title="COLOR #ADCC00" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(71, 222, 234)" style="background-color:#47DEEA;" title="COLOR #47DEEA" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(0, 0, 0)" style="background-color:#000000;" title="COLOR #000000" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(247, 216, 0)" style="background-color:#F7D800;" title="COLOR #F7D800" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(139, 0, 247)" style="background-color:#8B00F7;" title="COLOR #8B00F7" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(255, 0, 0)" style="background-color:#FF0000;" title="COLOR #FF0000" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(0, 41, 60)" style="background-color:#00293C;" title="COLOR #00293C" class="color_button" value=""></button>
+                <button onclick="trySetIconColorBackground(223, 225, 102)" style="background-color:#DFE166;" title="COLOR #DFE166" class="color_button" value=""></button>              
+                <button onclick="trySetIconColorBackground(0, 108, 132)" style="background-color:#006C84;" title="COLOR #006C84" class="color_button" value=""></button>                
+                <button onclick="trySetIconColorBackground(245, 202, 230)" style="background-color:#F5CAE6;" title="F5CAE6" class="color_button" value=""></button>
+
+
+            </div>   
+
+            </div>
+
+        </details>   
+
+        <hr>
+
+        <div type="input" class="sdpi-item" style="display:flex">
+            <div class="sdpi-item-label" title="" id="invert_back">Chart Color</div>
+            <input id="my_chart_color"  class="sdpi-item-value monotype" maxlength="7" placeholder="#F700E7" value="#F700E7" oninput="trySetIconColorChartManually()" onchange="trySetIconColorChartManually()">
+        </div>  
+
+        <div class="sdpi-item alignTop noInnerMargins" id="color_warning_chart" style="display:none;">
+            <div class="sdpi-item-label"></div>                
+            <summary><span style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';color:#FF0000">❗ Wrong HEX Color Code!</span></summary>
+        </div>
+
+        <details><summary style="margin-left:80px"><span style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';">ADVANCED SETUP</span></summary>
+
+        <div class="sdpi-item alignTop noInnerMargins">
+            <div class="sdpi-item-label"></div>   
+            <div>
+                <button onclick="trySetIconColorChart(216, 0, 255)" style="background-color:#D800FF;" title="COLOR #D800FF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(102, 255, 255)" style="background-color:#66FFFF;" title="COLOR #66FFFF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(180, 255, 0)" style="background-color:#B4FF00;" title="COLOR #B4FF00" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(0, 0, 255)" style="background-color:#0000FF;" title="COLOR #0000FF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(204, 204, 255)" style="background-color:#CCCCFF;" title="COLOR #CCCCFF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(0, 255, 0)" style="background-color:#00FF00;" title="COLOR #00FF00" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(255, 255, 255)" style="background-color:#FFFFFF;" title="COLOR #FFFFFF" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(255, 253, 1)" style="background-color:#FFFD01;" title="COLOR #FFFD01" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(204, 34, 30)" style="background-color:#CC221E;" title="COLOR #CC221E" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(93, 83, 94)" style="background-color:#5D535E;" title="COLOR #5D535E" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(25, 184, 235)" style="background-color:#19B8EB;" title="COLOR #19B8EB" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(64, 224, 208)" style="background-color:#40E0D0;" title="COLOR #40E0D0" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(142, 36, 98)" style="background-color:#8E2462;" title="COLOR #8E2462" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(247, 0, 231)" style="background-color:#F700E7;" title="COLOR #F700E7" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(198, 0, 108)" style="background-color:#C6006C;" title="COLOR #C6006C" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(161, 214, 226)" style="background-color:#A1D6E2;" title="COLOR #A1D6E2" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(254, 167, 0)" style="background-color:#FEA700;" title="COLOR #FEA700" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(60, 88, 154)" style="background-color:#3C589A;" title="COLOR #3C589A" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(132, 151, 176)" style="background-color:#8497B0;" title="COLOR #8497B0" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(177, 143, 106)" style="background-color:#B18F6A;" title="COLOR #B18F6A" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(223, 207, 190)" style="background-color:#DFCFBE;" title="COLOR #DFCFBE" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(107, 91, 149)" style="background-color:#6B5B95;" title="COLOR #6B5B95" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(173, 204, 0)" style="background-color:#ADCC00;" title="COLOR #ADCC00" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(71, 222, 234)" style="background-color:#47DEEA;" title="COLOR #47DEEA" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(0, 0, 0)" style="background-color:#000000;" title="COLOR #000000" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(247, 216, 0)" style="background-color:#F7D800;" title="COLOR #F7D800" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(139, 0, 247)" style="background-color:#8B00F7;" title="COLOR #8B00F7" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(255, 0, 0)" style="background-color:#FF0000;" title="COLOR #FF0000" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(0, 41, 60)" style="background-color:#00293C;" title="COLOR #00293C" class="color_button" value=""></button>
+                <button onclick="trySetIconColorChart(223, 225, 102)" style="background-color:#DFE166;" title="COLOR #DFE166" class="color_button" value=""></button>              
+                <button onclick="trySetIconColorChart(0, 108, 132)" style="background-color:#006C84;" title="COLOR #006C84" class="color_button" value=""></button>                
+                <button onclick="trySetIconColorChart(245, 202, 230)" style="background-color:#F5CAE6;" title="F5CAE6" class="color_button" value=""></button>
+
+            </div>   
+
+            </div>
+
+        </details>   
+
+
+        <div class="sdpi-heading">BUTTON EVENT</div>
+
+        <div type="input" class="sdpi-item" title="required">
+            <div class="sdpi-item-label" >Execute Event</div>
+            <input id="my_execute_url" oninput="SaveConfig()" onchange="SaveConfig()" style="font-family:Lucida Console, Courier New, Arial;color:white" class="sdpi-item-value" value="C:\Windows\System32\taskmgr.exe" placeholder="C:\Windows\System32\taskmgr.exe" >
+        </div>  
+
+        <div class="sdpi-item alignTop noInnerMargins">                
+            <div class="sdpi-item alignTop noInnerMargins">
+                <div class="sdpi-item-label"></div>     
+                <details>
+                    <summary>More Information</summary> 
+                    <br>File path or URL which should be opened when pressing the Stream Deck button<br>
+                </details>
+            </div>
+        </div>   
+
+        <div class="sdpi-heading">PERFORMANCE LOGGING</div>
+
+        <div type="group" class="sdpi-item">
+            <div class="sdpi-item-group" id="messagegroup_items">
+                <div type="select" class="sdpi-item" id="messagegroup_account">
+                    <div class="sdpi-item-label">Log to File</div>
+                    <select id="my_logging" class="sdpi-item-value select" onclick="changeValue()" onchange="changeValue()">
+                        <option value="false" selected>Disabled</option>
+                        <option value="true" >Enabled</option>
+                     </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="sdpi-item alignTop noInnerMargins">                
+            <div class="sdpi-item alignTop noInnerMargins">
+                <div class="sdpi-item-label"></div>     
+                <details>
+                    <summary>More Information</summary> 
+                    <br>If Enabled, the currently measured values is written in a log file under C:\Temp\SV_***.log<br><br>If the file reaches a size of 10 MB, it is saved as a backup in the same path away.<br><br>The log file may not be open or blocked exclusively from other programs while the Stream Deck writes.<br><br>Optimal to open the log file is <span class="linkspan" onclick="openLink('https://notepad-plus-plus.org/')"><strong>Notepad++</strong>
+                </details>
+            </div>
+        </div>  
+
+         <div class="sdpi-heading">WALLPAPER ᴮᴱᵀᴬ</div>
+
+        <div type="input" class="sdpi-item">
+            <div class="sdpi-item-label"></div>
+            <div class="icon_line">
+                <div class="preview_box">
+                    <div id="dropzone_wallpaper" class="dropzone"><span style="font-size:40px;"><i class="fa-solid fa-circle-down"></i></span><br>Drop PNG Image</div>
+                </div>
+                <div class="preview_box">
+                    <img class="preview_icon" id="wallpaper_preview" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII=">
+                    <div class="cover_button_line">
+                        <button class="preset_button" onclick="setDefaultWallpaper()" class="sdpi-item-value">Default</button>
+                        <button class="preset_button" onclick="DeleteWallpaper()" class="sdpi-item-value"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>                
+            </div>
+        </div>  
+
+        <div class="sdpi-item alignTop noInnerMargins">                
+            <div class="sdpi-item alignTop noInnerMargins">
+                <div class="sdpi-item-label"></div>     
+                <details>
+                    <summary>More Information</summary>
+                    <br>
+                    Standard according to .PNG format is supported, with the <span class="linkspan" onclick="openLink('https://marketplace.elgato.com/product/windows-cockpit-18293970-5760-4d5f-8e81-f9243734fd15')"><strong>Windows Cockpit Plugin</strong></span> you can easily convert any image format in .PNG
+                    <br><br>
+                    <i class="fa-solid fa-circle-down"></i> The PNG Image Drop Zone only works if the Stream Deck software is not running in Administrator mode
+                    <br>
+                </details>
+            </div>
+        </div>   
+
+        <div type="input" class="sdpi-item" style="display:none">
+            <div class="sdpi-item-label" title="">Wallpaper Input</div>
+            <input id="my_wallpaper_input" class="sdpi-item-value monotype_dark" value="">
+        </div>  
+
+        <div type="input" class="sdpi-item" style="display:none">
+            <div class="sdpi-item-label" title="">Wallpaper</div>
+            <input id="my_wallpaper_base64" class="sdpi-item-value monotype_dark" value="">
+        </div>  
+
+
+
+        <br>      
+        <div class="sdpi-heading" id="infor_div">PRIVACY PROTECTION</div>
+
+        <div class="sdpi-item alignTop noInnerMargins">
+            <div class="sdpi-item-label"></div>    
+            <div style="text-align: justify">   
+                <small>
+                    <strong>YOUR PRIVACY MATTERS</strong>
+                    <br>
+                    We do not collect or store any private, personal, or sensitive data. The telemetry mechanism is limited to anonymous, technical usage statistics.
+                </small>
+                <br><br>
+                <details>    
+                    <summary>Show More</summary>
+                    <small>
+                        <br>
+                        <strong>TELEMETRY DETAILS</strong>
+                        <br>
+                        When the software is launched for the first time, it creates a random, anonymous identifier (UUID as defined in RFC 4122). This identifier is used solely to send a one-time status ping during startup and to gain basic insights into how the software is used. It contains no personal or device-related information, is not linked to IP addresses or any other data source, and is never shared with third parties.
+                        <br>
+                        <br>
+                        <strong>GDPR COMPLIANCE</strong>
+                        <br>                    
+                        The UUID does not qualify as personal data under Article 4(1) of the GDPR. Since re-identification is technically excluded, no consent under Article 6(1)(a) is required. This implementation fully adheres to the GDPR principle of data minimization (Article 5(1)(c)).
+                    </small>            
+                </details>    
+            </div>
+        </div> 
+        <br>
+
+        <!-- <br>      
+        <div class="sdpi-heading" id="infor_div">INFORMATION</div>
+
+        <div class="sdpi-item alignTop noInnerMargins">
+            <div class="sdpi-item-label"></div>                
+            <summary style="padding-top:5px">© <span class="linkspan" onclick="openWebsite()">VIVRE-MOTION.COM</span> </summary>
+        </div> -->
+
+    </div>
+
+<script>
+		
+var websocket = null, uuid = null, pluginAction = null, actionInfo = {};
+
+var heart_beat = document.getElementById("heart_beat");
+var status_line = document.getElementById("status_line");
+var color_warning_value = document.getElementById("color_warning_value");
+var color_warning_titel = document.getElementById("color_warning_titel");
+var color_warning_background = document.getElementById("color_warning_background");
+var color_warning_chart = document.getElementById("color_warning_chart");
+var more_information = document.getElementById("more_information"); 
+var custom_ip = document.getElementById("custom_ip"); 
+var libre_webserver = document.getElementById("libre_webserver"); 
+var lan_adapter_name = document.getElementById("lan_adapter_name"); 
+var style_opacity_top = document.getElementById("style_opacity_top"); 
+var style_opacity_bottom = document.getElementById("style_opacity_bottom"); 
+var style_line = document.getElementById("style_line"); 
+var style_line_pattern = document.getElementById("style_line_pattern"); 
+var style_padding = document.getElementById("style_padding"); 
+var style_line_matrix = document.getElementById("style_line_matrix"); 
+var style_line_points = document.getElementById("style_line_points"); 
+var simulation_value = document.getElementById("simulation_value"); 
+var section_minmax = document.getElementById("section_minmax"); 
+var section_minmax_percent = document.getElementById("section_minmax_percent"); 
+var warning_minmax =  document.getElementById("warning_minmax"); 
+var warning_minmax_text = document.getElementById("warning_minmax_text"); 
+var dropzone_wallpaper = document.getElementById("dropzone_wallpaper"); 
+var wallpaper_preview = document.getElementById("wallpaper_preview"); 
+
+
+var label_title_font_size = document.getElementById("label_title_font_size");
+var label_value_font_size = document.getElementById("label_value_font_size");
+var label_title_stroke_size = document.getElementById("label_title_stroke_size");
+var label_value_stroke_size = document.getElementById("label_value_stroke_size");
+var label_polling_rate = document.getElementById("label_polling_rate");
+var label_line_padding = document.getElementById("label_line_padding");
+var label_line_stroke = document.getElementById("label_line_stroke");
+var label_fill_opacity = document.getElementById("label_fill_opacity");
+var label_pattern_stroke = document.getElementById("label_pattern_stroke");
+var label_pattern_space = document.getElementById("label_pattern_space");
+var label_matrix_density = document.getElementById("label_matrix_density");
+var label_matrix_point = document.getElementById("label_matrix_point");
+var label_simulation = document.getElementById("label_simulation");
+var label_fill_opacity_bottom = document.getElementById("label_fill_opacity_bottom");
+var label_pattern_rotation = document.getElementById("label_pattern_rotation");
+var label_min_value = document.getElementById("label_min_value");
+var label_max_value = document.getElementById("label_max_value");
+
+var my_monitor_event = document.getElementById("my_monitor_event");
+var my_extension = document.getElementById("my_extension");
+var my_value_fontsize = document.getElementById("my_value_fontsize");
+var my_value_stroke_size = document.getElementById("my_value_stroke_size");
+var my_value_color = document.getElementById("my_value_color");
+var my_title = document.getElementById("my_title");
+var my_title_stroke_size = document.getElementById("my_title_stroke_size");
+var my_title_fontsize = document.getElementById("my_title_fontsize");
+var my_title_color = document.getElementById("my_title_color");
+var my_background_color = document.getElementById("my_background_color");
+var my_chart_color = document.getElementById("my_chart_color");
+var my_execute_url = document.getElementById("my_execute_url");
+var my_custom_ip = document.getElementById("my_custom_ip");
+var my_chart_design = document.getElementById("my_chart_design");
+var my_polling_rate = document.getElementById("my_polling_rate");
+var my_lan_adapter = document.getElementById("my_lan_adapter");
+var my_line_padding = document.getElementById("my_line_padding");
+var my_line_stroke = document.getElementById("my_line_stroke");
+var my_fill_opacity = document.getElementById("my_fill_opacity");
+var my_fill_opacity_bottom = document.getElementById("my_fill_opacity_bottom");
+var my_pattern_stroke = document.getElementById("my_pattern_stroke");
+var my_pattern_spacing = document.getElementById("my_pattern_spacing");
+var my_pattern_rotation = document.getElementById("my_pattern_rotation");
+var my_matrix_density = document.getElementById("my_matrix_density");
+var my_matrix_point = document.getElementById("my_matrix_point");
+var my_simulation = document.getElementById("my_simulation");
+var my_logging = document.getElementById("my_logging");
+var my_libre_webserver = document.getElementById("my_libre_webserver");
+var my_libre_key = document.getElementById("my_libre_key");
+var my_min_value = document.getElementById("my_min_value");
+var my_max_value = document.getElementById("my_max_value");
+var my_wallpaper_base64 = document.getElementById("my_wallpaper_base64");
+var my_wallpaper_input = document.getElementById("my_wallpaper_input");
+
+
+
+updateChartDesign();
+updateGUI();
+SaveConfig();
+
+section_minmax.style.display = "none";
+section_minmax_percent.style.display = "block";
+
+////////////////////////////////////////////////
+
+function updateChartDesign() {
+
+    updateGUI(true);
+    SaveConfig();
+
+}
+////////////////////////////////////////////////
+
+function SaveConfig() {
+
+    payload = {
+        'my_monitor_event': document.getElementById('my_monitor_event').value,
+        'my_extension': document.getElementById('my_extension').value,
+        'my_value_fontsize': document.getElementById('my_value_fontsize').value,
+        'my_value_stroke_size': document.getElementById('my_value_stroke_size').value,
+        'my_value_color': document.getElementById('my_value_color').value,
+        'my_title': document.getElementById('my_title').value,
+        'my_title_stroke_size': document.getElementById('my_title_stroke_size').value,
+        'my_title_fontsize': document.getElementById('my_title_fontsize').value,
+        'my_title_color': document.getElementById('my_title_color').value,
+        'my_background_color': document.getElementById('my_background_color').value,
+        'my_chart_color': document.getElementById('my_chart_color').value,
+        'my_execute_url': document.getElementById('my_execute_url').value,
+        'my_custom_ip': document.getElementById('my_custom_ip').value,
+        'my_chart_design': document.getElementById('my_chart_design').value, 
+        'my_polling_rate': document.getElementById('my_polling_rate').value,      
+        'my_lan_adapter': document.getElementById('my_lan_adapter').value,      
+        'my_line_padding': document.getElementById('my_line_padding').value,      
+        'my_line_stroke': document.getElementById('my_line_stroke').value,      
+        'my_fill_opacity': document.getElementById('my_fill_opacity').value,      
+        'my_fill_opacity_bottom': document.getElementById('my_fill_opacity_bottom').value,      
+        'my_pattern_stroke': document.getElementById('my_pattern_stroke').value,      
+        'my_pattern_spacing': document.getElementById('my_pattern_spacing').value,   
+        'my_pattern_rotation': document.getElementById('my_pattern_rotation').value,    
+        'my_matrix_density': document.getElementById('my_matrix_density').value,      
+        'my_matrix_point': document.getElementById('my_matrix_point').value,      
+        'my_simulation': document.getElementById('my_simulation').value,      
+        'my_logging': document.getElementById('my_logging').value,      
+        'my_libre_webserver': document.getElementById('my_libre_webserver').value,      
+        'my_libre_key': document.getElementById('my_libre_key').value,      
+        'my_min_value': document.getElementById('my_min_value').value,      
+        'my_max_value': document.getElementById('my_max_value').value,      
+        'my_wallpaper_base64': document.getElementById('my_wallpaper_base64').value,      
+        'my_wallpaper_input': document.getElementById('my_wallpaper_input').value,      
+    };    
+
+    updateSettingsToPlugin();
+    saveValues(payload);
+
+}
+
+////////////////////////////////////////////////
+
+function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, inActionInfo) {
+	
+	uuid = inUUID;
+    // please note: the incoming arguments are of type STRING, so
+    // in case of the inActionInfo, we must parse it into JSON first
+    actionInfo = JSON.parse(inActionInfo); // cache the info
+    websocket = new WebSocket('ws://localhost:' + inPort);
+
+		
+    // if connection was established, the websocket sends
+    // an 'onopen' event, where we need to register our PI
+    websocket.onopen = function() {
+        var json = {
+            event: inRegisterEvent,
+            uuid: inUUID
+        };
+								
+        // register property inspector to Stream Deck
+        websocket.send(JSON.stringify(json));
+		
+        json = {
+            "event": "getSettings",
+            "context": uuid,
+        };
+        websocket.send(JSON.stringify(json));
+    };
+
+    // retrieve saved settings if there are any
+    websocket.onmessage = function(evt) {
+
+        // Received message from Stream Deck
+        const jsonObj = JSON.parse(evt.data);
+
+        if (jsonObj.payload.state !== undefined) {
+            updateStatus(jsonObj.payload.state);
+        }
+
+        if (jsonObj.event === 'didReceiveSettings') {
+            const payload = jsonObj.payload.settings;
+
+            if (payload.my_monitor_event !== undefined) {document.getElementById('my_monitor_event').value = payload.my_monitor_event; }
+            if (payload.my_extension !== undefined) {document.getElementById('my_extension').value = payload.my_extension; }
+            if (payload.my_value_fontsize !== undefined) {document.getElementById('my_value_fontsize').value = payload.my_value_fontsize; }
+            if (payload.my_value_stroke_size !== undefined) {document.getElementById('my_value_stroke_size').value = payload.my_value_stroke_size; }
+            if (payload.my_value_color !== undefined) {document.getElementById('my_value_color').value = payload.my_value_color; }
+            if (payload.my_title !== undefined) {document.getElementById('my_title').value = payload.my_title; }
+            if (payload.my_title_stroke_size !== undefined) {document.getElementById('my_title_stroke_size').value = payload.my_title_stroke_size; }
+            if (payload.my_title_fontsize !== undefined) {document.getElementById('my_title_fontsize').value = payload.my_title_fontsize; }
+            if (payload.my_title_color !== undefined) {document.getElementById('my_title_color').value = payload.my_title_color; }
+            if (payload.my_background_color !== undefined) {document.getElementById('my_background_color').value = payload.my_background_color; }
+            if (payload.my_chart_color !== undefined) {document.getElementById('my_chart_color').value = payload.my_chart_color; }
+            if (payload.my_execute_url !== undefined) {document.getElementById('my_execute_url').value = payload.my_execute_url; }
+            if (payload.my_custom_ip !== undefined) {document.getElementById('my_custom_ip').value = payload.my_custom_ip; }
+            if (payload.my_chart_design !== undefined) {document.getElementById('my_chart_design').value = payload.my_chart_design; }
+            if (payload.my_polling_rate !== undefined) {document.getElementById('my_polling_rate').value = payload.my_polling_rate; }
+            if (payload.my_lan_adapter !== undefined) {document.getElementById('my_lan_adapter').value = payload.my_lan_adapter; }
+            if (payload.my_line_padding !== undefined) {document.getElementById('my_line_padding').value = payload.my_line_padding; }
+            if (payload.my_line_stroke !== undefined) {document.getElementById('my_line_stroke').value = payload.my_line_stroke; }
+            if (payload.my_fill_opacity !== undefined) {document.getElementById('my_fill_opacity').value = payload.my_fill_opacity; }
+            if (payload.my_fill_opacity_bottom !== undefined) {document.getElementById('my_fill_opacity_bottom').value = payload.my_fill_opacity_bottom; }
+            if (payload.my_pattern_stroke !== undefined) {document.getElementById('my_pattern_stroke').value = payload.my_pattern_stroke; }
+            if (payload.my_pattern_spacing !== undefined) {document.getElementById('my_pattern_spacing').value = payload.my_pattern_spacing; }
+            if (payload.my_pattern_rotation !== undefined) {document.getElementById('my_pattern_rotation').value = payload.my_pattern_rotation; }
+            if (payload.my_matrix_density !== undefined) {document.getElementById('my_matrix_density').value = payload.my_matrix_density; }
+            if (payload.my_matrix_point !== undefined) {document.getElementById('my_matrix_point').value = payload.my_matrix_point; }
+            if (payload.my_simulation !== undefined) {document.getElementById('my_simulation').value = payload.my_simulation; }
+            if (payload.my_logging !== undefined) {document.getElementById('my_logging').value = payload.my_logging; }
+            if (payload.my_libre_webserver !== undefined) {document.getElementById('my_libre_webserver').value = payload.my_libre_webserver; }
+            if (payload.my_libre_key !== undefined) {document.getElementById('my_libre_key').value = payload.my_libre_key; }
+            if (payload.my_min_value !== undefined) {document.getElementById('my_min_value').value = payload.my_min_value; }
+            if (payload.my_max_value !== undefined) {document.getElementById('my_max_value').value = payload.my_max_value; }
+            if (payload.my_wallpaper_base64 !== undefined) {document.getElementById('my_wallpaper_base64').value = payload.my_wallpaper_base64; }
+            if (payload.my_wallpaper_input !== undefined) {document.getElementById('my_wallpaper_input').value = payload.my_wallpaper_input; }
+
+            updateSettingsToPlugin();
+            updateGUI(false);
+            updateStreamDeckWallpaper(false);
+
+        }
+    };
+}
+
+////////////////////////////////////////////////
+
+function updateStatus(str) {
+
+    heart_beat.innerHTML = "<div class='polling-point'>🤍</div>";
+    status_line.innerHTML = str;
+
+}
+
+////////////////////////////////////////////////
+
+function updateSettingsToPlugin() {
+
+    payload = {
+        'my_monitor_event': document.getElementById('my_monitor_event').value,
+        'my_extension': document.getElementById('my_extension').value,
+        'my_value_fontsize': document.getElementById('my_value_fontsize').value,
+        'my_value_stroke_size': document.getElementById('my_value_stroke_size').value,
+        'my_value_color': document.getElementById('my_value_color').value,
+        'my_title': document.getElementById('my_title').value,
+        'my_title_stroke_size': document.getElementById('my_title_stroke_size').value,
+        'my_title_fontsize': document.getElementById('my_title_fontsize').value,
+        'my_title_color': document.getElementById('my_title_color').value,
+        'my_background_color': document.getElementById('my_background_color').value,
+        'my_chart_color': document.getElementById('my_chart_color').value,
+        'my_execute_url': document.getElementById('my_execute_url').value,
+        'my_custom_ip': document.getElementById('my_custom_ip').value,
+        'my_chart_design': document.getElementById('my_chart_design').value,
+        'my_polling_rate': document.getElementById('my_polling_rate').value,
+        'my_lan_adapter': document.getElementById('my_lan_adapter').value,  
+        'my_line_padding': document.getElementById('my_line_padding').value,   
+        'my_line_stroke': document.getElementById('my_line_stroke').value, 
+        'my_fill_opacity': document.getElementById('my_fill_opacity').value, 
+        'my_fill_opacity_bottom': document.getElementById('my_fill_opacity_bottom').value,    
+        'my_pattern_stroke': document.getElementById('my_pattern_stroke').value, 
+        'my_pattern_spacing': document.getElementById('my_pattern_spacing').value, 
+        'my_pattern_rotation': document.getElementById('my_pattern_rotation').value, 
+        'my_matrix_density': document.getElementById('my_matrix_density').value,      
+        'my_matrix_point': document.getElementById('my_matrix_point').value,      
+        'my_simulation': document.getElementById('my_simulation').value,      
+        'my_logging': document.getElementById('my_logging').value,      
+        'my_libre_webserver': document.getElementById('my_libre_webserver').value,   
+        'my_libre_key': document.getElementById('my_libre_key').value,   
+        'my_min_value': document.getElementById('my_min_value').value,      
+        'my_max_value': document.getElementById('my_max_value').value,    
+        'my_wallpaper_base64': document.getElementById('my_wallpaper_base64').value,   
+        'my_wallpaper_input': document.getElementById('my_wallpaper_input').value,   
+    };
+    sendValueToPlugin(payload);
+}
+
+////////////////////////////////////////////////
+
+function sendValueToPlugin(payload) {
+    if (websocket) {
+        const json = {
+            "action": actionInfo['action'],
+            "event": "sendToPlugin",
+            "context": uuid,
+            "payload": payload
+        };
+        websocket.send(JSON.stringify(json));
+    }
+}
+
+////////////////////////////////////////////////
+
+function saveValues(payload) {
+    if (websocket) {
+        const json = {
+            "event": "setSettings",
+            "context": uuid,
+            "payload": payload
+        };
+        websocket.send(JSON.stringify(json));
+    }
+}
+
+////////////////////////////////////////////////
+
+function openWebsite() {
+    if (websocket && (websocket.readyState === 1)) {
+        const json = {
+            'event': 'openUrl',
+            'payload': {
+                'url': 'https://vivre-motion.com/systemvitals'
+            }
+        };
+        websocket.send(JSON.stringify(json));
+    }
+}
+
+////////////////////////////////////////////////
+
+function changeStep(value,element) {
+
+    var currentValue = parseInt(element.value);
+    var minValue = parseInt(element.min);
+    var maxValue = parseInt(element.max);
+
+    if ( element.value < maxValue) {
+        element.value = currentValue - value;
+    }
+
+    if ( element.value >= minValue) {
+        element.value = currentValue + value;
+    }
+
+    updateGUI(false);
+    SaveConfig();
+
+}
+
+////////////////////////////////////////////////
+
+function changeValue() {
+
+    updateGUI(false);
+    SaveConfig();
+
+}
+
+////////////////////////////////////////////////
+
+function updateGUI(preselect) {
+
+    lan_adapter_name.style.display = "none";
+    if ( my_monitor_event.value === "LAN_MB" ) { lan_adapter_name.style.display = "block";}
+    
+    label_polling_rate.innerHTML = "Polling <span class='value_mark'>" + parseInt(my_polling_rate.value)/1000 + "s</span>";
+
+    label_title_font_size.innerHTML = "Font Size <span class='value_mark'>" + my_title_fontsize.value + "px</span>";
+    label_value_font_size.innerHTML = "Font Size <span class='value_mark'>" + my_value_fontsize.value + "px</span>";
+
+    label_title_stroke_size.innerHTML = "Stroke Size <span class='value_mark'>" + my_title_stroke_size.value + "</span>";
+    label_value_stroke_size.innerHTML = "Stroke Size <span class='value_mark'>" + my_value_stroke_size.value + "</span>";
+    label_line_stroke.innerHTML = "Stroke <span class='value_mark'>" + my_line_stroke.value + "px</span>";
+    label_line_padding.innerHTML = "Baseline 🡱 <span class='value_mark'>" + my_line_padding.value + "%</span>";
+    if (my_chart_design.value == "CHART_MATRIX") { 
+        label_fill_opacity.innerHTML = "Opacity <span class='value_mark'>" + my_fill_opacity.value + "%</span>";
+    } else {
+        label_fill_opacity.innerHTML = "Opacity <span class='gradient'>⬘</span> <span class='value_mark'>" + my_fill_opacity.value + "%</span>";
+        label_fill_opacity_bottom.innerHTML = "Opacity <span class='gradient'>⬙</span> <span class='value_mark'>" + my_fill_opacity_bottom.value + "%</span>";
+    }
+    label_pattern_stroke.innerHTML = "Line <span class='value_mark'>" + my_pattern_stroke.value + "px</span>";
+    label_pattern_space.innerHTML = "Space <span class='value_mark'>" + my_pattern_spacing.value + "px</span>";
+    label_pattern_rotation.innerHTML = "Rotation <span class='value_mark'>" + my_pattern_rotation.value + "°</span>";
+    label_matrix_density.innerHTML = "Density <span class='value_mark'>" + my_matrix_density.value + "px</span>";
+    label_matrix_point.innerHTML = "Point <span class='value_mark'>" + my_matrix_point.value + "px</span>";
+    label_min_value.innerHTML = "Min <span class='value_mark'>" + my_min_value.value + "</span>";
+    label_max_value.innerHTML = "Max <span class='value_mark'>" + my_max_value.value + "</span>";
+    
+    const min = parseInt(my_min_value.value);
+    const max = parseInt(my_max_value.value);
+    if (my_max_value.value === "") { errorToast("Maximum value must not be empty",4000); }
+    if (isNaN(max) || max < 1) { errorToast("Maximum value must be at least 1",4000); }
+    if (!isNaN(min) && !isNaN(max) && min >= max) { errorToast("The min value must always be smaller than the max value",6000); }
+
+
+    custom_ip.style.display = "none";
+    libre_webserver.style.display = "none";
+
+    style_line.style.display = "none";
+    style_opacity_top.style.display = "none";
+    style_opacity_bottom.style.display = "none";
+    style_line_pattern.style.display = "none";
+    style_padding.style.display = "none";
+    style_line_matrix.style.display = "none";
+    style_line_points.style.display = "none";
+    simulation_value.style.display = "none";
+
+    if (my_chart_design.value == "CHART_FILL") { 
+        style_opacity_top.style.display = "block"; 
+        style_opacity_bottom.style.display = "block";
+        style_padding.style.display = "block";
+        if (preselect == true) { my_fill_opacity.value = 100; }
+        if (preselect == true) { my_fill_opacity_bottom.value = 0; }
+        if (preselect == true) { my_matrix_density.value = 40; }
+        if (preselect == true) { my_matrix_point.value = 8; }
+    }
+    if (my_chart_design.value == "CHART_MATRIX") { 
+        style_opacity_top.style.display = "block"; 
+        style_padding.style.display = "block";
+        style_line_matrix.style.display = "block";
+        style_line_points.style.display = "block";
+        if (preselect == true) { my_fill_opacity.value = 100; }
+        if (preselect == true) { my_matrix_density.value = 38; }
+        if (preselect == true) { my_matrix_point.value = 8; }
+    }
+    if (my_chart_design.value == "CHART_PATTERN") { 
+        style_line_pattern.style.display = "block";
+        style_padding.style.display = "block";
+        if (preselect == true) { my_pattern_stroke.value = 8; } 
+        if (preselect == true) { my_pattern_spacing.value = 16; } 
+        if (preselect == true) { my_pattern_rotation.value = 45; } 
+    }
+    if (my_chart_design.value == "CHART_LINE") { 
+        style_line.style.display = "block"; 
+        style_padding.style.display = "block";
+        if (preselect == true) { my_line_stroke.value = 40; } 
+    }
+    if (my_chart_design.value == "CHART_LINE_SOFT_FILL") { 
+        style_opacity_top.style.display = "block"; 
+        style_opacity_bottom.style.display = "block";
+        style_line.style.display = "block"; 
+        style_padding.style.display = "block";
+        if (preselect == true) { my_line_stroke.value = 15; }
+        if (preselect == true) { my_fill_opacity.value = 50; }
+        if (preselect == true) { my_fill_opacity_bottom.value = 0; }
+    }
+    if (my_chart_design.value == "CHART_LINE_POINTS") { 
+        style_line.style.display = "block"; 
+        style_line_points.style.display = "block";
+        style_padding.style.display = "block";
+        if (preselect == true) { my_line_stroke.value = 10; }
+        if (preselect == true) { my_matrix_point.value = 40; }
+    }
+
+    
+    let event = my_monitor_event.value;
+
+    let buttonWarning = "<br><br><span class='glitch-warning'>Each event monitor should only be used once per Stream Deck profile to avoid rendering glitches, incorrect values, or other unexpected behavior.</span>"
+    let libreInfo = `<br><br>Check out the ➜ <span class="linkspan" onclick="openLink('https://vivre-motion.com/systemvitalsinstallation')"><strong>Installation Guide</strong></span><br><br>This option required the Libre Hardware Monitor Webserver and the right key name (Standard according to the key name [case-sensitive] is specified)</span><br><br>The defined type should also only be used for this query, otherwise it may lead to conversion or presentation errors<br><br>With some games or applications, no value can be displayed at the start because they block sensor queries as long as they run.</span>`;
+    let customInfo = "This option allows you to retrieve any custom value from LHM.<br><br>It's important to note that LHM may change the unit of certain values at runtime depending on the value itself. For example, Ethernet speeds may be shown in KB/s or MB/s depending on the throughput. If a percentage value is being read, the MIN/MAX sliders should be set to MIN=0 and MAX=100.<br><br>By default, the plugin attempts to determine the unit from LHM and assigns it to the variable <strong>%LHM%</strong><br><br>If this is not desired, simply define the unit using a custom value.";
+
+    if (preselect == true) {   
+        my_min_value.value = 0;
+        my_max_value.value = 100;
+    }
+    section_minmax.style.display = "none";
+    section_minmax_percent.style.display = "none";
+
+    switch (event) {
+
+    case "CUSTOM_LHW_1":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "CUSTOM #1";
+            my_extension.value = '';
+            my_libre_key.value = "SD_CUSTOM_1";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%LHM%</tspan>';
+        }
+        more_information.innerHTML = customInfo + buttonWarning;
+        libre_webserver.style.display = "block";
+        break;
+    case "CUSTOM_LHW_2":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "CUSTOM #2";
+            my_extension.value = '';
+            my_libre_key.value = "SD_CUSTOM_2";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%LHM%</tspan>';
+        }
+        more_information.innerHTML = customInfo + buttonWarning;
+        libre_webserver.style.display = "block";
+        break;
+    case "CUSTOM_LHW_3":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "CUSTOM #3";
+            my_extension.value = '';
+            my_libre_key.value = "SD_CUSTOM_3";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%LHM%</tspan>';
+        }
+        more_information.innerHTML = customInfo + buttonWarning;
+        libre_webserver.style.display = "block";
+        break;
+    case "CUSTOM_LHW_4":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "CUSTOM #4";
+            my_extension.value = '';
+            my_libre_key.value = "SD_CUSTOM_4";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%LHM%</tspan>';
+        }
+        more_information.innerHTML = customInfo + buttonWarning;
+        libre_webserver.style.display = "block";
+        break;
+    case "CUSTOM_LHW_5":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "CUSTOM #5";
+            my_extension.value = '';
+            my_libre_key.value = "SD_CUSTOM_5";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%LHM%</tspan>';
+        }
+        more_information.innerHTML = customInfo + buttonWarning;
+        libre_webserver.style.display = "block";
+        break;
+    case "CUSTOM_LHW_6":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "CUSTOM #6";
+            my_extension.value = '';
+            my_libre_key.value = "SD_CUSTOM_6";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%LHM%</tspan>';
+        }
+        more_information.innerHTML = customInfo + buttonWarning;
+        libre_webserver.style.display = "block";
+        break;
+    case "CUSTOM_LHW_7":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "CUSTOM #7";
+            my_extension.value = '';
+            my_libre_key.value = "SD_CUSTOM_7";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%LHM%</tspan>';
+        }
+        more_information.innerHTML = customInfo + buttonWarning;
+        libre_webserver.style.display = "block";
+        break;
+    case "CUSTOM_LHW_8":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "CUSTOM #8";
+            my_extension.value = '';
+            my_libre_key.value = "SD_CUSTOM_8";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%LHM%</tspan>';
+        }
+        more_information.innerHTML = customInfo + buttonWarning;
+        libre_webserver.style.display = "block";
+        break;
+    case "CUSTOM_LHW_9":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "CUSTOM #9";
+            my_extension.value = '';
+            my_libre_key.value = "SD_CUSTOM_9";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%LHM%</tspan>';
+        }
+        more_information.innerHTML = customInfo + buttonWarning;
+        libre_webserver.style.display = "block";
+        break;
+    case "CUSTOM_LHW_10":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "CUSTOM #10";
+            my_extension.value = '';
+            my_libre_key.value = "SD_CUSTOM_10";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%LHM%</tspan>';
+        }
+        more_information.innerHTML = customInfo + buttonWarning;
+        libre_webserver.style.display = "block";
+        break;  
+    case "RANDOM_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "RANDOM";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Generates a random percentage between 0% and 100%" + buttonWarning;
+        break;
+    case "SIM_PERCENT":
+        section_minmax_percent.style.display = "block";
+        my_simulation.min = 0;
+        my_simulation.max = 100;   
+        if (preselect == true) {      
+            my_title.value = "SIM";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        label_simulation.innerHTML = "Percent <span class='value_mark'>" + my_simulation.value + "%</span>";
+        more_information.innerHTML = "The option is used for calibration and simulation a fictional percentage value" + buttonWarning;
+        simulation_value.style.display = "block";
+        break;
+    case "SIM_VALUE":
+        section_minmax.style.display = "block";
+        my_simulation.min = 0;
+         my_simulation.max = 5000;
+        if (preselect == true) {
+            my_min_value.value = 0;
+            my_max_value.value = 1000;
+            my_title.value = "SIM";
+            my_extension.value = '';
+        }
+        label_simulation.innerHTML = "Value <span class='value_mark'>" + my_simulation.value + "</span>";
+        more_information.innerHTML = "The option is used for calibration and simulation a fictional value" + buttonWarning;
+        simulation_value.style.display = "block";
+        break;
+    case "RAM_GB":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "RAM GB";
+            my_extension.value = "";
+        }
+        more_information.innerHTML = "RAM volume currently used by the system in gigabytes (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "LAN_MB":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "LAN MB/s";
+            my_extension.value = "";
+        }
+        more_information.innerHTML = "Current network traffic in MB/s [Megabytes per second] (including overhead)" + buttonWarning;
+        break;
+    case "LAN_MBP":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "LAN Mbp/s";
+            my_extension.value = "";
+        }
+        more_information.innerHTML = "Current network traffic in Mbp/s [Megabit per second] (including overhead)" + buttonWarning;
+        break;
+    case "PING_GOOGLE":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 60;
+            my_title.value = "GOOGLE";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">ms</tspan>';
+        }
+        more_information.innerHTML = "Determines the ping in milliseconds on Google DNS 8.8.8.8" + buttonWarning;
+        break;
+    case "PING_CLOUDFLARE":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 60;
+            my_title.value = "CLOUDFLARE";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">ms</tspan>';
+        }
+        more_information.innerHTML = "Determines the ping in milliseconds on Cloudflare DNS 1.1.1.1" + buttonWarning;
+        break;
+    case "PING_CUSTOM":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 60;
+            my_title.value = "CUSTOM IP";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">ms</tspan>';
+        }
+        more_information.innerHTML = "Determines the ping in milliseconds to individual Custom IP v4" + buttonWarning;
+        custom_ip.style.display = "block";
+        break;
+    case "FPS_RTSSS":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 120;
+            my_title.value = "FPS";
+            my_extension.value = "";
+        }
+        more_information.innerHTML = "Determine the current FPS using MSI Afterburner or RivaTuner Statistics Server (RTSS)" + buttonWarning;
+        break;
+    case "BATTERY_PERCENT":
+            section_minmax_percent.style.display = "block";
+        if (preselect == true) {        
+            my_title.value = "BATTERY";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Determine the current battery stand when a battery is installed" + buttonWarning;
+        break;
+    case "WIFI_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "WIFI";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Determines the current WiFi WLAN signal strength" + buttonWarning;
+        break;
+    case "AUDIO_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "AUDIO";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Master system audio volume";
+        break;
+    case "GPU_TEMP_NVIDIA":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_min_value.value = 0;
+            my_max_value.value = 120;
+            my_title.value = "GPU °C";
+            my_extension.value = "°";
+        }
+        more_information.innerHTML = "NVIDIA GPU (Graphics card) based on NVML API Tempered in grad Celsius (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "GPU_TEMP_LHW":
+        section_minmax.style.display = "block";
+        if (preselect == true) {        
+            my_min_value.value = 0;
+            my_max_value.value = 120;
+            my_title.value = "GPU °C";
+            my_extension.value = "°";
+            my_libre_key.value = "SD_GPU_TEMP_LHM";
+        }
+        more_information.innerHTML = `Current GPU Tempered in °C or °F (rounded on a decimal place)`  + buttonWarning + libreInfo;
+        libre_webserver.style.display = "block";
+        break;
+    case "CPU_TEMP_LHW":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 120;
+            my_title.value = "CPU °C";
+            my_extension.value = "°";
+            my_libre_key.value = "SD_CPU_TEMP_LHM";
+        }
+        more_information.innerHTML = `Current CPU (Processor) Tempered in °C or °F (rounded on a decimal place)` + buttonWarning + libreInfo;
+        libre_webserver.style.display = "block";
+        break;
+    case "AIO_TEMP_LHW":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 100;
+            my_title.value = "AIO °C";
+            my_extension.value = "°";
+            my_libre_key.value = "SD_AIO_TEMP_LHM";
+        }
+        more_information.innerHTML = `Current AIO Liquid Water Tempered in °C or °F (rounded on a decimal place)` + buttonWarning + libreInfo;
+        libre_webserver.style.display = "block";
+        break;
+    case "CPU_WATT_LHW":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 1000;
+            my_title.value = "CPU Watt";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">W</tspan>';
+            my_libre_key.value = "SD_CPU_WATT_LHM";
+        }
+        more_information.innerHTML = `Current CPU (Processor) Watt Power Consumption (rounded on a decimal place)` + buttonWarning + libreInfo;
+        libre_webserver.style.display = "block";
+        break;
+    case "GPU_WATT_NVIDIA":
+        section_minmax.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 1000;
+            my_title.value = "GPU Watt";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">W</tspan>';
+        }
+        more_information.innerHTML = `NVIDIA GPU (Processor) Watt Power Consumption (rounded on a decimal place)` + buttonWarning + libreInfo;
+        break;
+    case "CPU_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "CPU";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Current CPU (processor) usage in percent (rounded to one decimal place).<br><br>CPU usage is retrieved using the Windows Performance Data Helper (PDH) API, specifically by querying the performance counter<br><code>\\Processor(_Total)\\&#37; Processor Time</code><br><br>This counter represents the percentage of time all CPU cores spend executing non-idle threads. It reflects active processing time and excludes idle periods. The PDH API internally manages sampling intervals, so only a single query is needed per update.<br><br>This approach relies on Windows’ built-in performance monitoring and returns values comparable to those shown in Task Manager. However, Task Manager may apply additional smoothing or averaging over time, which can result in slight delays or differences in responsiveness." + buttonWarning;
+        break;
+    case "GPU_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "GPU";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Current GPU (Graphics card) based on NVML API occupancy in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "RAM_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "RAM";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "RAM volume currently used by the system in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "VRAM_PERCENT_NVIDIA":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "VRAM";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "NVIDIA GPU VRAM volume currently used by the system in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "DRIVE_0_GBS":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 5;
+            my_title.value = "DRIVE [0] GB/s";
+            my_extension.value = '';
+        }
+        more_information.innerHTML = "Current disk I/O in GB/s [Gigabyte per second] (includes overhead). Read and write throughput are combined into a single value.<br><br><span class='caution-admin'><strong>⚠️ CAUTION!</strong><br><br>Only works if the application is executed as an <strong>Administrator</strong>.<br><br>This feature uses low-level system access (based on <code>IOCTL_DISK_PERFORMANCE</code>) and may not be supported by all drives or controllers.<br><br>Access can fail for certain external or protected drives (e.g. BitLocker, USB storage) due to system or security restrictions.<br><br>Some antivirus or endpoint protection tools may block or restrict access to physical drives.</span>" + buttonWarning;
+        break;
+    case "DRIVE_1_GBS":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 5;
+            my_title.value = "DRIVE [1] GB/s";
+            my_extension.value = '';
+        }
+        more_information.innerHTML = "Current disk I/O in GB/s [Gigabyte per second] (includes overhead). Read and write throughput are combined into a single value.<br><br><span class='caution-admin'><strong>⚠️ CAUTION!</strong><br><br>Only works if the application is executed as an <strong>Administrator</strong>.<br><br>This feature uses low-level system access (based on <code>IOCTL_DISK_PERFORMANCE</code>) and may not be supported by all drives or controllers.<br><br>Access can fail for certain external or protected drives (e.g. BitLocker, USB storage) due to system or security restrictions.<br><br>Some antivirus or endpoint protection tools may block or restrict access to physical drives.</span>" + buttonWarning;
+        break;
+    case "DRIVE_2_GBS":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 5;
+            my_title.value = "DRIVE [2] GB/s";
+            my_extension.value = '';
+        }
+        more_information.innerHTML = "Current disk I/O in GB/s [Gigabyte per second] (includes overhead). Read and write throughput are combined into a single value.<br><br><span class='caution-admin'><strong>⚠️ CAUTION!</strong><br><br>Only works if the application is executed as an <strong>Administrator</strong>.<br><br>This feature uses low-level system access (based on <code>IOCTL_DISK_PERFORMANCE</code>) and may not be supported by all drives or controllers.<br><br>Access can fail for certain external or protected drives (e.g. BitLocker, USB storage) due to system or security restrictions.<br><br>Some antivirus or endpoint protection tools may block or restrict access to physical drives.</span>" + buttonWarning;
+        break;
+    case "DRIVE_3_GBS":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 5;
+            my_title.value = "DRIVE [3] GB/s";
+            my_extension.value = '';
+        }
+        more_information.innerHTML = "Current disk I/O in GB/s [Gigabyte per second] (includes overhead). Read and write throughput are combined into a single value.<br><br><span class='caution-admin'><strong>⚠️ CAUTION!</strong><br><br>Only works if the application is executed as an <strong>Administrator</strong>.<br><br>This feature uses low-level system access (based on <code>IOCTL_DISK_PERFORMANCE</code>) and may not be supported by all drives or controllers.<br><br>Access can fail for certain external or protected drives (e.g. BitLocker, USB storage) due to system or security restrictions.<br><br>Some antivirus or endpoint protection tools may block or restrict access to physical drives.</span>" + buttonWarning;
+        break;
+    case "DRIVE_4_GBS":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 5;
+            my_title.value = "DRIVE [4] GB/s";
+            my_extension.value = '';
+        }
+        more_information.innerHTML = "Current disk I/O in GB/s [Gigabyte per second] (includes overhead). Read and write throughput are combined into a single value.<br><br><span class='caution-admin'><strong>⚠️ CAUTION!</strong><br><br>Only works if the application is executed as an <strong>Administrator</strong>.<br><br>This feature uses low-level system access (based on <code>IOCTL_DISK_PERFORMANCE</code>) and may not be supported by all drives or controllers.<br><br>Access can fail for certain external or protected drives (e.g. BitLocker, USB storage) due to system or security restrictions.<br><br>Some antivirus or endpoint protection tools may block or restrict access to physical drives.</span>" + buttonWarning;
+        break;
+    case "DRIVE_5_GBS":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 5;
+            my_title.value = "DRIVE [5] GB/s";
+            my_extension.value = '';
+        }
+        more_information.innerHTML = "Current disk I/O in GB/s [Gigabyte per second] (includes overhead). Read and write throughput are combined into a single value.<br><br><span class='caution-admin'><strong>⚠️ CAUTION!</strong><br><br>Only works if the application is executed as an <strong>Administrator</strong>.<br><br>This feature uses low-level system access (based on <code>IOCTL_DISK_PERFORMANCE</code>) and may not be supported by all drives or controllers.<br><br>Access can fail for certain external or protected drives (e.g. BitLocker, USB storage) due to system or security restrictions.<br><br>Some antivirus or endpoint protection tools may block or restrict access to physical drives.</span>" + buttonWarning;
+        break;
+    case "DRIVE_6_GBS":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 5;
+            my_title.value = "DRIVE [6] GB/s";
+            my_extension.value = '';
+        }
+        more_information.innerHTML = "Current disk I/O in GB/s [Gigabyte per second] (includes overhead). Read and write throughput are combined into a single value.<br><br><span class='caution-admin'><strong>⚠️ CAUTION!</strong><br><br>Only works if the application is executed as an <strong>Administrator</strong>.<br><br>This feature uses low-level system access (based on <code>IOCTL_DISK_PERFORMANCE</code>) and may not be supported by all drives or controllers.<br><br>Access can fail for certain external or protected drives (e.g. BitLocker, USB storage) due to system or security restrictions.<br><br>Some antivirus or endpoint protection tools may block or restrict access to physical drives.</span>" + buttonWarning;
+        break;
+    case "DRIVE_7_GBS":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 5;
+            my_title.value = "DRIVE [7] GB/s";
+            my_extension.value = '';
+        }
+        more_information.innerHTML = "Current disk I/O in GB/s [Gigabyte per second] (includes overhead). Read and write throughput are combined into a single value.<br><br><span class='caution-admin'><strong>⚠️ CAUTION!</strong><br><br>Only works if the application is executed as an <strong>Administrator</strong>.<br><br>This feature uses low-level system access (based on <code>IOCTL_DISK_PERFORMANCE</code>) and may not be supported by all drives or controllers.<br><br>Access can fail for certain external or protected drives (e.g. BitLocker, USB storage) due to system or security restrictions.<br><br>Some antivirus or endpoint protection tools may block or restrict access to physical drives.</span>" + buttonWarning;
+        break;
+    case "DRIVE_8_GBS":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 5;
+            my_title.value = "DRIVE [8] GB/s";
+            my_extension.value = '';
+        }
+        more_information.innerHTML = "Current disk I/O in GB/s [Gigabyte per second] (includes overhead). Read and write throughput are combined into a single value.<br><br><span class='caution-admin'><strong>⚠️ CAUTION!</strong><br><br>Only works if the application is executed as an <strong>Administrator</strong>.<br><br>This feature uses low-level system access (based on <code>IOCTL_DISK_PERFORMANCE</code>) and may not be supported by all drives or controllers.<br><br>Access can fail for certain external or protected drives (e.g. BitLocker, USB storage) due to system or security restrictions.<br><br>Some antivirus or endpoint protection tools may block or restrict access to physical drives.</span>" + buttonWarning;
+        break;
+    case "DRIVE_9_GBS":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_max_value.value = 5;
+            my_title.value = "DRIVE [9] GB/s";
+            my_extension.value = '';
+        }
+        more_information.innerHTML = "Current disk I/O in GB/s [Gigabyte per second] (includes overhead). Read and write throughput are combined into a single value.<br><br><span class='caution-admin'><strong>⚠️ CAUTION!</strong><br><br>Only works if the application is executed as an <strong>Administrator</strong>.<br><br>This feature uses low-level system access (based on <code>IOCTL_DISK_PERFORMANCE</code>) and may not be supported by all drives or controllers.<br><br>Access can fail for certain external or protected drives (e.g. BitLocker, USB storage) due to system or security restrictions.<br><br>Some antivirus or endpoint protection tools may block or restrict access to physical drives.</span>" + buttonWarning;
+        break;
+    case "HDD_A_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive A:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_B_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive B:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_C_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive C:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_D_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive D:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_E_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+        my_title.value = "Drive E:";
+        my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_F_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive F:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_G_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive G:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_H_PERCENT":
+        section_minmax_percent.style.display = "block";
+            if (preselect == true) {
+            my_title.value = "Drive H:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_I_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive I:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_J_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive J:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_K_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive K:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_L_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive L:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_M_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive M:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_N_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive N:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_O_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive O:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_P_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive P:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_Q_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive Q:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_R_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive R:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_S_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive S:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_T_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive T:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_U_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive U:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_V_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive V:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_W_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive W:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_X_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive X:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_Y_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive Y:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    case "HDD_Z_PERCENT":
+        section_minmax_percent.style.display = "block";
+        if (preselect == true) {
+            my_title.value = "Drive Z:";
+            my_extension.value = '<tspan font-size="100" baseline-shift="super">%</tspan>';
+        }
+        more_information.innerHTML = "Storage occupancy of the selected hard drive in percent (rounded on a decimal place)" + buttonWarning;
+        break;
+    default:
+    }
+    
+}
+
+////////////////////////////////////////////////
+
+function isValidHexColor(hexColor) {
+
+    const regex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+
+    return regex.test(hexColor);
+
+}
+
+////////////////////////////////////////////////
+
+function rgbToHex(r, g, b) {
+
+    const red = Math.floor(r).toString(16).padStart(2, '0');
+    const green = Math.floor(g).toString(16).padStart(2, '0');
+    const blue = Math.floor(b).toString(16).padStart(2, '0');
+    return `#${red}${green}${blue}`;
+
+}
+
+////////////////////////////////////////////////
+
+function trySetIconColorTitleManually() {   
+    
+    var myValue = my_title_color.value;
+    if (!isValidHexColor(myValue)) {
+        color_warning_title.style.display = "flex";
+        return;
+    } else
+    {
+        color_warning_title.style.display = "none";
+        updateGUI();
+        SaveConfig();
+    }
+
+}
+
+////////////////////////////////////////////////
+
+function trySetIconColorBackgroundManually() {   
+    
+    var myValue = my_background_color.value;
+    if (!isValidHexColor(myValue)) {
+        color_warning_background.style.display = "flex";
+        return;
+    } else
+    {
+        color_warning_background.style.display = "none";
+        updateGUI();
+        SaveConfig();
+    }
+
+}
+
+////////////////////////////////////////////////
+
+function trySetIconColorChartManually() {   
+    
+    var myValue = my_chart_color.value;
+    if (!isValidHexColor(myValue)) {
+        color_warning_chart.style.display = "flex";
+        return;
+    } else
+    {
+        color_warning_chart.style.display = "none";
+        updateGUI();
+        SaveConfig();
+    }
+
+}
+
+////////////////////////////////////////////////
+
+function trySetIconColorBackgroundManually() {   
+    
+    var myValue = my_background_color.value;
+    if (!isValidHexColor(myValue)) {
+        color_warning_background.style.display = "flex";
+        return;
+    } else
+    {
+        color_warning_background.style.display = "none";
+        updateGUI();
+        SaveConfig();
+    }
+
+}
+
+////////////////////////////////////////////////
+
+function trySetIconColorValueManually() {   
+    
+    var myValue = my_value_color.value;
+    if (!isValidHexColor(myValue)) {
+        color_warning_value.style.display = "flex";
+        return;
+    } else
+    {
+        color_warning_value.style.display = "none";
+        updateGUI();
+        SaveConfig();
+    }
+
+}
+
+////////////////////////////////////////////////
+
+function trySetIconColorTitle(r,g,b) {   
+
+    var r = parseInt(r);
+    var g = parseInt(g);
+    var b = parseInt(b);
+        
+    var HexColor = rgbToHex(r,g,b);  
+
+    color_warning_title.style.display = "none";
+    my_title_color.value = HexColor;
+    formatInput(my_title_color);
+    updateGUI();
+    SaveConfig();
+
+}
+
+////////////////////////////////////////////////
+
+function trySetIconColorBackground(r,g,b) {   
+
+    var r = parseInt(r);
+    var g = parseInt(g);
+    var b = parseInt(b);
+        
+    var HexColor = rgbToHex(r,g,b);  
+
+    color_warning_background.style.display = "none";
+    my_background_color.value = HexColor;
+    formatInput(my_background_color);
+    updateGUI();
+    SaveConfig();
+
+}
+
+////////////////////////////////////////////////
+
+function trySetIconColorChart(r,g,b) {   
+
+    var r = parseInt(r);
+    var g = parseInt(g);
+    var b = parseInt(b);
+        
+    var HexColor = rgbToHex(r,g,b);  
+
+    color_warning_chart.style.display = "none";
+    my_chart_color.value = HexColor;
+    formatInput(my_chart_color);
+    updateGUI();
+    SaveConfig();
+
+}
+
+////////////////////////////////////////////////
+
+function trySetIconColorValue(r,g,b) {   
+
+    var r = parseInt(r);
+    var g = parseInt(g);
+    var b = parseInt(b);
+        
+    var HexColor = rgbToHex(r,g,b);  
+
+    color_warning_value.style.display = "none";
+    my_value_color.value = HexColor;
+    formatInput(my_value_color);
+    updateGUI();
+    SaveConfig();
+
+}
+
+////////////////////////////////////////////////
+
+function formatInput(input) {
+    input.value = input.value.toUpperCase().replace(/\s+/g, '');
+}
+
+////////////////////////////////////////////////
+
+document.getElementById("my_value_color").addEventListener("input", function() {
+    formatInput(this);
+});
+document.getElementById("my_title_color").addEventListener("input", function() {
+    formatInput(this);
+});
+document.getElementById("my_background_color").addEventListener("input", function() {
+    formatInput(this);
+});
+document.getElementById("my_chart_color").addEventListener("input", function() {
+    formatInput(this);
+});
+
+////////////////////////////////////////////////
+
+function SelectMonitor() {
+
+    updateGUI(true);
+    SaveConfig();
+
+}
+
+////////////////////////////////////////////////
+
+function pasteUnitValue() {
+
+    var exval = my_extension.value;
+
+    if (!exval || exval.trim() === "") {
+        errorToast("The input field is empty. Please enter a value before applying the unit formatting.", 5000);
+        return;
+    }
+
+    if (exval.toLowerCase().includes("<tspan")) {
+        errorToast("&lt;tspan... tag is already included in the input field. Delete the content add an units to signs (e.g. %) and press the button again.",6000);
+    }
+    
+    my_extension.value = '<tspan font-size="100" baseline-shift="super">'+exval+'</tspan>';
+    
+    SaveConfig();
+
+}
+
+////////////////////////////////////////////////
+
+function openLink(url) {
+    if (websocket && (websocket.readyState === 1)) {
+        const json = {
+            'event': 'openUrl',
+            'payload': {
+                'url': url
+            }
+        };
+        websocket.send(JSON.stringify(json));
+    }
+}
+
+////////////////////////////////////////////////
+
+function errorToast(errorText,waitTime) {
+
+    const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: waitTime,
+            theme: "dark",
+            timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+        }
+        });
+        Toast.fire({
+            icon: "error",
+            title: errorText
+            });
+}
+
+////////////////////////////////////////////////
+
+my_libre_key.addEventListener("input", function () {
+    // Only permitted signs: a-z, A-Z, 0-9, _ und -
+    this.value = this.value.replace(/[^a-zA-Z0-9_-]/g, "");
+});
+
+////////////////////////////////////////////////
+
+my_max_value.addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9]/g, "");
+    updateGUI(false);
+});
+
+////////////////////////////////////////////////
+
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+  dropzone_wallpaper.addEventListener(eventName, e => {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+});
+
+////////////////////////////////////////////////
+
+function readFileAsBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = (err) => reject(err);
+    reader.readAsDataURL(file);
+  });
+}
+
+////////////////////////////////////////////////
+
+function waitForImageLoad(img) {
+
+  return new Promise((resolve, reject) => {
+    img.onload = () => resolve();
+    img.onerror = (err) => reject(err);
+  });
+
+}
+
+////////////////////////////////////////////////
+
+dropzone_wallpaper.addEventListener('drop', async (e) => {
+
+  const MAX_FILE_SIZE = 2_097_152; // 2 MB
+  const file = e.dataTransfer.files[0];
+
+
+  if (!file) return;
+
+  if (file.size > MAX_FILE_SIZE) {
+    errorToast('The image is too large (max 2 MB allowed)');
+    return;
+  }
+
+
+  if (file && file.type === 'image/png') {
+    try {
+      const base64String = await readFileAsBase64(file);
+
+      const existingImg = dropzone_wallpaper.querySelector('img');
+      if (existingImg) existingImg.remove();
+
+      const img = document.createElement('img');
+      img.src = base64String;
+
+      await waitForImageLoad(img);
+
+      my_wallpaper_input.value = base64String;
+
+      await updateStreamDeckWallpaper(true);
+
+    } catch (err) {
+        errorToast('Error processing the file!');
+      console.error(err);
+    }
+  } else {
+    errorToast('Please upload a PNG picture!');
+  }
+});
+
+////////////////////////////////////////////////
+
+function setDefaultWallpaper() {
+    const existingImg = dropzone_wallpaper.querySelector('img');
+    if (existingImg) existingImg.remove();
+    my_wallpaper_input.value = coverBase64;
+    updateStreamDeckWallpaper(true);
+    SaveConfig();
+}
+
+////////////////////////////////////////////////
+
+function DeleteWallpaper() {
+
+    const existingImg = dropzone_wallpaper.querySelector('img');
+    if (existingImg) existingImg.remove();
+    my_wallpaper_input.value = emptyBase64;
+    updateStreamDeckWallpaper(true);
+    SaveConfig();
+
+}
+
+////////////////////////////////////////////////
+
+function applySharpenFilter(context, width, height, amount) {
+    const imageData = context.getImageData(0, 0, width, height);
+    const data = imageData.data;
+    const copy = new Uint8ClampedArray(data);
+
+    const kernel = [
+        0, -1,  0,
+       -1,  5, -1,
+        0, -1,  0
+    ];
+    const kernelSize = 3;
+    const half = Math.floor(kernelSize / 2);
+
+    const result = new Uint8ClampedArray(data.length);
+
+    for (let y = half; y < height - half; y++) {
+        for (let x = half; x < width - half; x++) {
+            for (let c = 0; c < 3; c++) {
+                let sum = 0;
+                for (let ky = -half; ky <= half; ky++) {
+                    for (let kx = -half; kx <= half; kx++) {
+                        const px = ((y + ky) * width + (x + kx)) * 4;
+                        const weight = kernel[(ky + half) * kernelSize + (kx + half)];
+                        sum += copy[px + c] * weight;
+                    }
+                }
+                const idx = (y * width + x) * 4 + c;
+                result[idx] = sum;
+            }
+            const idx = (y * width + x) * 4 + 3;
+            result[idx] = copy[idx]; // Alpha bleibt
+        }
+    }
+
+    // Überblenden: original + (geschärft - original) * amount
+    for (let i = 0; i < data.length; i += 4) {
+        for (let c = 0; c < 3; c++) {
+            const sharpened = result[i + c];
+            const original = copy[i + c];
+            data[i + c] = Math.min(255, Math.max(0, original + (sharpened - original) * amount));
+        }
+        data[i + 3] = copy[i + 3];
+    }
+
+    context.putImageData(imageData, 0, 0);
+}
+
+////////////////////////////////////////////////
+
+async function updateStreamDeckWallpaper(SaveState) {
+
+    const canvas = document.createElement('canvas');
+    canvas.width = 512;
+    canvas.height = 512;
+    const context = canvas.getContext('2d'); 
+    context.fillStyle = "rgba(0, 0, 0, 0)"; //100% transparent otherwise the background chart color no longer works
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    var bgImage = new Image();
+    bgImage.src = my_wallpaper_input.value;
+
+    bgImage.onload = function () {
+
+        const canvasRatio = canvas.width / canvas.height;
+        const imgRatio = bgImage.width / bgImage.height;
+
+        let drawWidth, drawHeight, offsetX, offsetY;
+
+        if (imgRatio > canvasRatio) {
+            // Bild ist breiter, Höhe passt, Breite wird beschnitten
+            drawHeight = canvas.height;
+            drawWidth = bgImage.width * (canvas.height / bgImage.height);
+            offsetX = -(drawWidth - canvas.width) / 2;
+            offsetY = 0;
+        } else {
+            // Bild ist höher, Breite passt, Höhe wird beschnitten
+            drawWidth = canvas.width;
+            drawHeight = bgImage.height * (canvas.width / bgImage.width);
+            offsetX = 0;
+            offsetY = -(drawHeight - canvas.height) / 2;
+        }
+
+        
+        context.drawImage(bgImage, offsetX, offsetY, drawWidth, drawHeight);
+        applySharpenFilter(context, canvas.width, canvas.height,2);
+    }
+
+    var importSVG = `<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"></svg>`; 
+    var svgPrepare = importSVG;
+    var iconImage = new Image();
+    iconImage.src = "";    
+    iconImage.src = "data:image/svg+xml," + encodeURIComponent(svgPrepare);
+        
+    iconImage.onload = function() {
+        context.drawImage(iconImage, 0, 0);     
+        const dataURL = canvas.toDataURL('image/png');      
+        my_wallpaper_base64.value = dataURL;
+        // console.log(my_wallpaper_base64.value);
+        wallpaper_preview.src = dataURL;
+        if (SaveState == true ) { 
+            SaveConfig(); 
+        }
+    }   
+
+}
+
+////////////////////////////////////////////////
+
+</script>	
+	
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Reaction</title>
+  <link rel="stylesheet" href="../../libs/css/udpi.css">
+</head>
+<body>
+  <div class="udpi-wrapper hidden">
+    <form id="property-inspector">
+      <div class="udpi-item">
+        <label class="udpi-item-label">Reaction</label>
+        <select class="udpi-item-value" id="reaction" name="reaction">
+          <option value="thumbsup">Thumbs Up</option>
+          <option value="thumbsdown">Thumbs Down</option>
+          <option value="clap">Clap</option>
+          <option value="heart">Heart</option>
+          <option value="laugh">Laugh</option>
+          <option value="sad">Sad</option>
+          <option value="wow">Wow</option>
+          <option value="thinking">Thinking</option>
+          <option value="party">Party</option>
+        </select>
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Server Status</label>
+        <input class="udpi-item-value" id="serverStatus" type="text" readonly value="offline">
+      </div>
+      <div class="udpi-item">
+        <label class="udpi-item-label">Socket Port</label>
+        <input class="udpi-item-value" id="serverPort" type="text" readonly value="-">
+      </div>
+    </form>
+  </div>
+
+  <script src="../../libs/js/constants.js"></script>
+  <script src="../../libs/js/eventEmitter.js"></script>
+  <script src="../../libs/js/timers.js"></script>
+  <script src="../../libs/js/utils.js"></script>
+  <script src="../../libs/js/ulanzideckApi.js"></script>
+  <script src="./inspector.js"></script>
+</body>
+</html>

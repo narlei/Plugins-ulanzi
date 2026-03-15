@@ -1,0 +1,22 @@
+{
+  "id": "com.caios.ulanzi.wsstarter",
+  "name": "Ulanzi WS Starter",
+  "version": "0.1.0",
+  "description": "Starter plugin with Action and Status runtimes using WebSocket",
+  "author": "caios",
+  "entry": "app.js",
+  "actions": [
+    {
+      "id": "com.caios.ulanzi.wsstarter.action",
+      "name": "Run WebSocket Action",
+      "runtime": "actions/ActionRuntime.js",
+      "inspector": "../property-inspectors/action/inspector.html"
+    },
+    {
+      "id": "com.caios.ulanzi.wsstarter.status",
+      "name": "Connection Status",
+      "runtime": "actions/StatusRuntime.js",
+      "inspector": "../property-inspectors/status/inspector.html"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Action Inspector</title>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 12px; }
+      label { display: block; margin-top: 10px; font-weight: 600; }
+      input, textarea { width: 100%; box-sizing: border-box; margin-top: 4px; }
+      button { margin-top: 12px; padding: 8px 10px; cursor: pointer; }
+      small { color: #555; display: block; margin-top: 8px; }
+    </style>
+  </head>
+  <body>
+    <label for="actionId">Action ID</label>
+    <input id="actionId" type="text" placeholder="scene.switch" />
+
+    <label for="argsJson">Args JSON</label>
+    <textarea id="argsJson" rows="6" placeholder='{"scene":"Intro"}'></textarea>
+
+    <label for="wsUrl">WebSocket URL</label>
+    <input id="wsUrl" type="text" placeholder="ws://localhost:8059" />
+
+    <button id="saveBtn">Save</button>
+    <small id="status"></small>
+
+    <script src="./inspector.js"></script>
+  </body>
+</html>
