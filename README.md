@@ -1,5 +1,7 @@
 # Ulanzi Deck Plugin Starter
 
+[![Available on Ulanzi Community Store](https://raw.githubusercontent.com/narlei/ulanzicommunitystore/main/docs/badges/ulanzi-community-store.svg)](https://ulanzicommunitystore.narlei.com)
+
 Template inicial para desenvolver plugins do Ulanzi Deck com:
 
 - Runtime de acao (`ActionRuntime`)
